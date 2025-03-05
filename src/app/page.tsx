@@ -3,6 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import {Navbar} from "@/app/components/Navbar";
+import {DemoReel, Project} from "@/app/components/Data";
 
 export default function Home() {
 
@@ -44,69 +46,92 @@ export default function Home() {
         fetchData();
     }, []);
 
-    if (loading) return <p>Chargement...</p>
     if (error) return <p>Erreur: {error}</p>;
 
     return (
-        <div className="home">
-        {/*<div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">*/}
-            <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+        <div className="relative container flex justify-center items-center flex-col">
 
-            <Image src="/game_developer_banner.png" alt="developer_banner" layout="responsive" width={100} height={100}/>
+            {/*Nuages bleus/violets en arrière-plan*/}
+            <div className="absolute inset-0 z-0">
+                {/*Première couche de tâches en nuances de bleu/violet*/}
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(79,70,229,0.3),_transparent_60%),_radial-gradient(circle_at_top_left,_rgba(120,0,167,0.25),_transparent_60%)]"></div>
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,_rgba(139,92,246,0.3),_transparent_60%),_radial-gradient(circle_at_bottom_right,_rgba(26,29,164,0.25),_transparent_60%)]"></div>
 
-              <div className="demo_reels">
-                  <h2>Demo Reels</h2>
-                  <ul>
-                      Count : {demo_reels.length}
-                      {demo_reels.map((demo_reel) => (
-                          // <li key={demo_reel['id']}> -- {demo_reel['id']}. {demo_reel['title']} : <a href={demo_reel['link']}>Click here</a></li>
-                          <li key={demo_reel['id']}> -- {demo_reel['id']}. {demo_reel['title']}:
-                              <Link key="link_default" href={demo_reel['link']} className="text-blue-500">
-                                  Click here
-                              </Link>
-                              <iframe
-                                  src={demo_reel['link']} title={demo_reel['title']}
-                                  className="w-full aspect-video self-stretch md:min-h-96"
-                                  frameBorder="0" aria-hidden="true"
-                                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                  referrerPolicy="strict-origin-when-cross-origin" allowFullScreen
-                              />
-                          </li>
-                      ))}
-                  </ul>
-              </div>
+                {/*Deuxième couche pour plus de profondeur*/}
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(56,189,248,0.2),_transparent_70%),_radial-gradient(circle_at_center,_rgba(120,0,167,0.15),_transparent_70%)]"></div>
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(168,85,247,0.2),_transparent_70%),_radial-gradient(circle_at_top_right,_rgba(26,29,164,0.15),_transparent_70%)]"></div>
+            </div>
 
-                <div className="projects">
-                    <h2>Projects</h2>
-                    <ul>
-                        Count : {projects.length}
-                        {projects.map((project) => (
-                            <li key={project['id']}> -- {project['id']}. {project['title']}</li>
-                      ))}
-                  </ul>
-              </div>
+            <div className="relative z-10">
+                <Image src="/game_developer_banner.png" alt="developer_banner" layout="responsive" width={100} height={100}/>
+                <main className="m-5">
 
-              <div className="menu">
-                  <ul>
-                      <li>Home</li>
-                      <li >About</li>
-                      <li>Projects</li>
-                      <li>Github</li>
-                  </ul>
-              </div>
+                    <Navbar />
 
-              <Link key="link_default" href="/#">
-                  <p className="hidden md:block">Link to default page</p>
-              </Link>
+                    <br/><br/>
 
-            </main>
+                    {loading && <h1 className="text-3xl">Data loading...</h1>}
+                    {!loading &&
+                        <div>
 
-            <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
+                            <h1 className="website_description flex justify-center">
+                                website_description
+                            </h1>
 
-                <h1>Footer</h1>
-                <p>This is the footer...</p>
+                            <br/><br/>
 
-            </footer>
+                            <div className="demo_reels">
+                                <br/>
+                                <h1 className="text-3xl">Demo Reels ({demo_reels.length})</h1>
+                                <br/>
+                                <div className="h-0.5 bg-gray-600" />
+                                <br/>
+                                <div className="grid grid-cols-2 gap-5 m-5">
+                                    {demo_reels.map((demo_reel: DemoReel) => (
+                                        <div key={demo_reel.id}>
+                                            <iframe
+                                                src={demo_reel.link} title={demo_reel.title}
+                                                className="w-full aspect-video self-stretch md:min-h-96"
+                                                frameBorder="0" aria-hidden="true"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                referrerPolicy="strict-origin-when-cross-origin" allowFullScreen
+                                            />
+                                            <h1>{demo_reel.id}. {demo_reel.title}</h1>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+
+                            <br/><br/>
+
+                            <div className="projects">
+                                <br/>
+                                <h1 className="text-3xl">Projects ({projects.length})</h1>
+                                <div className="h-0.5 bg-gray-600" />
+                                <br/>
+                                <div className="grid grid-cols-2 gap-5 m-5">
+                                    {projects.map((project: Project) => (
+                                        <div key={project.id}>
+                                            <h1>{project.id}. {project.title} : {project.tagline}</h1>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+
+                    }
+
+                    <br/><br/>
+
+                </main>
+
+                <footer className="justify-items-center">
+
+                    <h1>Footer</h1>
+                    <p>This is the footer...</p>
+
+                </footer>
+            </div>
         </div>
     );
 }
