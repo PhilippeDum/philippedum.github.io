@@ -1,4 +1,4 @@
-﻿// /src/app/api/users/route.js
+﻿// /src/app/api/projects/route.js
 import { query } from '@/lib/db';
 import { NextResponse } from 'next/server';
 
