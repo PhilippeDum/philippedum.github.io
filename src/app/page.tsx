@@ -8,8 +8,9 @@ import {DemoReel, Project} from "@/app/components/Data";
 
 export default function Home() {
 
-    const [demo_reels, setDemo_reels] = useState([]);
-    const [projects, setProjects] = useState([]);
+    const [content, setContent] = useState<{ [key: string]: string }>({});
+    const [demo_reels, setDemo_reels] = useState<DemoReel[]>([]);
+    const [projects, setProjects] = useState<Project[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
@@ -17,10 +18,15 @@ export default function Home() {
 
         const fetchData = async () => {
             try {
-                const [demo_reelsResponse, projectsResponse] = await Promise.all([
+                const [contentResponse, demo_reelsResponse, projectsResponse] = await Promise.all([
+                    fetch('/api/content'),
                     fetch('/api/demo_reels'),
                     fetch('/api/projects'),
                 ]);
+
+                if (!contentResponse.ok) {
+                    throw new Error('Erreur lors de la récupération du contenu');
+                }
 
                 if (!demo_reelsResponse.ok) {
                     throw new Error('Erreur lors de la récupération des demo reels');
@@ -30,9 +36,15 @@ export default function Home() {
                     throw new Error('Erreur lors de la récupération des projects');
                 }
 
+                const contentData = await contentResponse.json();
+                const contentDictionaryData = contentData.reduce((acc: { [key: string]: string }, item: { key: string, value: string }) => {
+                    acc[item.key] = item.value;
+                    return acc;
+                }, {});
                 const demo_reelsData = await demo_reelsResponse.json();
                 const projectsData = await projectsResponse.json();
 
+                setContent(contentDictionaryData);
                 setDemo_reels(demo_reelsData);
                 setProjects(projectsData);
             } catch (error) {
@@ -45,8 +57,6 @@ export default function Home() {
 
         fetchData();
     }, []);
-
-    if (error) return <p>Erreur: {error}</p>;
 
     return (
         <div className="relative container flex justify-center items-center flex-col">
@@ -68,17 +78,18 @@ export default function Home() {
 
                     <Navbar github_link="/github" linkedin_link="/linkedIn" itchio_link="/itchio" />
 
-                    <br/><br/>
+                    <br/><br/><br/><br/><br/><br/>
 
                     {loading && <h1 className="text-3xl">Data loading...</h1>}
-                    {!loading &&
+                    {error && <h1 className="text-3xl">Error : {error}</h1>}
+                    {!loading && !error &&
                         <div>
 
-                            <h1 className="website_description flex justify-center">
-                                website_description
+                            <h1 className="flex justify-center text-center whitespace-pre-wrap text-2xl">
+                                {content["website_description"].replace('\\n', '').trim()}
                             </h1>
 
-                            <br/><br/>
+                            <br/><br/><br/><br/>
 
                             <div className="demo_reels">
                                 <br/>
@@ -87,7 +98,7 @@ export default function Home() {
                                 <div className="h-0.5 bg-gray-600" />
                                 <br/>
                                 <div className="grid grid-cols-2 gap-5 m-5">
-                                    {demo_reels.map((demo_reel: DemoReel) => (
+                                    {demo_reels.map((demo_reel) => (
                                         <div key={demo_reel.id}>
                                             <iframe
                                                 src={demo_reel.link} title={demo_reel.title}
@@ -110,15 +121,15 @@ export default function Home() {
                                 <div className="h-0.5 bg-gray-600" />
                                 <br/>
                                 <div className="grid grid-cols-2 gap-5 m-5">
-                                    {projects.map((project: Project) => (
+                                    {projects.map((project) => (
                                         <div key={project.id}>
                                             <h1>{project.id}. {project.title} : {project.tagline}</h1>
                                         </div>
                                     ))}
                                 </div>
                             </div>
-                        </div>
 
+                        </div>
                     }
 
                     <br/><br/>
