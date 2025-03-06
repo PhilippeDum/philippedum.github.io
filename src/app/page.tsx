@@ -1,10 +1,10 @@
 'use client'
 
 import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import {Navbar} from "@/app/components/Navbar";
 import {DemoReel, Project} from "@/app/components/Data";
+import Card from "@/app/components/Card";
 
 export default function Home() {
 
@@ -123,7 +123,11 @@ export default function Home() {
                                 <div className="grid grid-cols-2 gap-5 m-5">
                                     {projects.map((project) => (
                                         <div key={project.id}>
-                                            <h1>{project.id}. {project.title} : {project.tagline}</h1>
+                                            <Card
+                                                title={project.title}
+                                                tagline={project.tagline}
+                                                date={project.date}
+                                            />
                                         </div>
                                     ))}
                                 </div>
@@ -132,9 +136,9 @@ export default function Home() {
                         </div>
                     }
 
-                    <br/><br/>
-
                 </main>
+
+                <br/><br/><br/><br/>
 
                 <footer className="justify-items-center">
 
