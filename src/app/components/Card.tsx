@@ -1,12 +1,20 @@
 ﻿// components/Card.js
 
-export default function Card({ title, tagline, date }) {
+export default function Card({ title, tagline, date, images }) {
+    const imagesList = images.split(',').map(item => item.trim());
+    const firstImage = imagesList[0];
+    let cardImage = "/";
+    if (!firstImage || firstImage === "") {
+        cardImage += "globe.svg"; // default image
+    }else{
+        cardImage += images;
+    }
     return (
         <div className="max-w-sm mx-auto rounded-2xl shadow-lg overflow-hidden">
             <img
                 className="w-full h-auto object-cover"
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD1631sJZBsiKvkwYqaBHkTpGDaC0cRjZLfvriZkUuGZtOXhayfl8KgS7eW9-97AcuvIs&usqp=CAU"
-                alt="Unity"
+                src={cardImage}
+                alt="Card Image"
             />
             <div className="p-4 bg-gray-400 bg-opacity-30">
                 <h2 className="text-xl font-bold mb-2">{title}</h2>

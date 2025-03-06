@@ -127,6 +127,7 @@ export default function Home() {
                                                 title={project.title}
                                                 tagline={project.tagline}
                                                 date={project.date}
+                                                images={project.images}
                                             />
                                         </div>
                                     ))}
