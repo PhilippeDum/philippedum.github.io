@@ -10,5 +10,7 @@ export type Project = {
     formation: string;
     color: string;
     genre: string;
+    tagId: string;
+    tagline: string;
     images: string;
 };
