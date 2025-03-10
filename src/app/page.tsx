@@ -120,7 +120,7 @@ export default function Home() {
                                 <h1 className="text-3xl">Projects ({projects.length})</h1>
                                 <div className="h-0.5 bg-gray-600" />
                                 <br/>
-                                <div className="grid grid-cols-2 gap-5 m-5">
+                                <div className="grid grid-cols-4 gap-5 m-5">
                                     {projects.map((project) => (
                                         <div key={project.id}>
                                             <Card

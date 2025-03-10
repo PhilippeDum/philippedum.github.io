@@ -4,8 +4,8 @@ export default function Card({ title, tagline, date, images }) {
 
     const imagesList = images.split(',').map(item => item.trim());
     const firstImage = imagesList[0];
-    const cardImage = "/" + firstImage;
-    const defaultImage = "/globe.svg";
+    const cardImage = "/projects/" + firstImage;
+    const defaultImage = "/projects/a_venir.png";
 
     return (
         <div className="max-w-sm mx-auto rounded-2xl shadow-lg overflow-hidden">
