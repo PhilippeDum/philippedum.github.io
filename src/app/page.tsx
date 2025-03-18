@@ -3,14 +3,36 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import {Navbar} from "@/app/components/Navbar";
-import {DemoReel, Project} from "@/app/components/Data";
+import {DemoReel, Project, Category} from "@/app/components/Data";
 import Card from "@/app/components/Card";
+
+function SetupProjects(projects: Project[], categories: Category[]) {
+    const projectsPerCategory = [];
+
+    for (let category of categories) {
+        const categoryProject = [];
+
+        for (let project of projects) {
+            if (category.id == project.category) {
+                categoryProject.push(project);
+            }
+        }
+
+        projectsPerCategory.push({
+            key: category.title,
+            value: categoryProject
+        });
+    }
+
+    return projectsPerCategory;
+}
 
 export default function Home() {
 
     const [content, setContent] = useState<{ [key: string]: string }>({});
     const [demo_reels, setDemo_reels] = useState<DemoReel[]>([]);
     const [projects, setProjects] = useState<Project[]>([]);
+    const [projectsPerCategory, setProjectsPerCategory] = useState();
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
@@ -18,10 +40,11 @@ export default function Home() {
 
         const fetchData = async () => {
             try {
-                const [contentResponse, demo_reelsResponse, projectsResponse] = await Promise.all([
+                const [contentResponse, demo_reelsResponse, projectsResponse, categoriesResponse] = await Promise.all([
                     fetch('/api/content'),
                     fetch('/api/demo_reels'),
                     fetch('/api/projects'),
+                    fetch('/api/categories'),
                 ]);
 
                 if (!contentResponse.ok) {
@@ -36,6 +59,10 @@ export default function Home() {
                     throw new Error('Erreur lors de la récupération des projects');
                 }
 
+                if (!categoriesResponse.ok) {
+                    throw new Error('Erreur lors de la récupération des catégories');
+                }
+
                 const contentData = await contentResponse.json();
                 const contentDictionaryData = contentData.reduce((acc: { [key: string]: string }, item: { key: string, value: string }) => {
                     acc[item.key] = item.value;
@@ -43,10 +70,14 @@ export default function Home() {
                 }, {});
                 const demo_reelsData = await demo_reelsResponse.json();
                 const projectsData = await projectsResponse.json();
+                const categoriesData = await categoriesResponse.json();
 
                 setContent(contentDictionaryData);
                 setDemo_reels(demo_reelsData);
                 setProjects(projectsData);
+
+                const projectsPerCategory = SetupProjects(projectsData, categoriesData);
+                setProjectsPerCategory(projectsPerCategory);
             } catch (error) {
                 console.error("Erreur au fetch : ", error, " (", error.message, ")");
                 setError(error.message);
@@ -120,18 +151,21 @@ export default function Home() {
                                 <h1 className="text-3xl">Projects ({projects.length})</h1>
                                 <div className="h-0.5 bg-gray-600" />
                                 <br/>
-                                <div className="grid grid-cols-4 gap-5 m-5">
-                                    {projects.map((project) => (
-                                        <div key={project.id}>
-                                            <Card
-                                                title={project.title}
-                                                tagline={project.tagline}
-                                                date={project.date}
-                                                images={project.images}
-                                            />
+                                {projectsPerCategory.map((category) => (
+                                    <div key={category.key}>
+                                        <h1 className="text-3xl">{category.title}</h1>
+                                        <br/>
+                                        <h2>{category.key}</h2>
+                                        <div className="grid grid-cols-4 gap-5 m-5">
+                                            {category.value.map((project) => (
+                                                <div key={project.id}>
+                                                    <Card project={project}/>
+                                                </div>
+                                            ))}
                                         </div>
-                                    ))}
-                                </div>
+                                        <br/>
+                                    </div>
+                                ))}
                             </div>
 
                         </div>

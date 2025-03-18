@@ -15,4 +15,11 @@ export type Project = {
     tag: number;
     tagline: string;
     images: string;
+    video: string;
+    category: number;
 };
+
+export type Category = {
+    id: number;
+    title: string;
+}
