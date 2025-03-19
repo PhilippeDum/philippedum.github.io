@@ -107,7 +107,7 @@ export default function Home() {
                 <Image src="/game_developer_banner.png" alt="developer_banner" layout="responsive" width={100} height={100}/>
                 <main className="m-5">
 
-                    <Navbar github_link="/github" linkedin_link="/linkedIn" itchio_link="/itchio" />
+                    <Navbar github_link={content["github_link"]} linkedin_link={content["linkedin_link"]} itchio_link={content["itchio_link"]} />
 
                     <br/><br/><br/><br/><br/><br/>
 
