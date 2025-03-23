@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import {DemoReel, Project, Category} from "@/app/components/Data";
 import Card from "@/app/components/Card";
+import Link from "next/link";
 
 function SetupProjects(projects: Project[], categories: Category[]) {
     const projectsPerCategory = [];
@@ -172,10 +173,17 @@ export default function Home() {
 
                 <br/><br/><br/><br/>
 
-                <footer className="justify-items-center">
+                <div className="h-0.5 bg-gray-600" />
 
-                    <h1>Footer</h1>
-                    <p>This is the footer...</p>
+                <footer className="justify-items-center m-5">
+
+                    <h1 className="sm:text-2xl">Contact :</h1>
+                    <br/>
+                    <div className="flex flex-col sm:flex-row gap-5 underline text-blue-400">
+                        <Link className="hover:text-blue-500" href={content["github_link"] || "#"}>Github</Link>
+                        <Link className="hover:text-blue-500" href={content["linkedin_link"] || "#"}>LinkedIn</Link>
+                        <Link className="hover:text-blue-500" href={content["itchio_link"] || "#"}>Itch.io</Link>
+                    </div>
 
                 </footer>
             </div>
