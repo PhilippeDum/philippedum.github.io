@@ -111,11 +111,11 @@ export default function Home() {
 
                             <div className="demo_reels">
                                 <br/>
-                                <h1 className="text-3xl">Demo Reels ({demo_reels.length})</h1>
+                                <h1 className="sm:text-3xl">Demo Reels ({demo_reels.length})</h1>
                                 <br/>
                                 <div className="h-0.5 bg-gray-600" />
                                 <br/>
-                                <div className="grid grid-cols-2 gap-5 m-5">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 m-5">
                                     {demo_reels.map((demo_reel) => (
                                         <div key={demo_reel.id}>
                                             <iframe
@@ -135,7 +135,7 @@ export default function Home() {
 
                             <div className="projects">
                                 <br/>
-                                <h1 className="text-3xl">Projects ({projects.length})</h1>
+                                <h1 className="sm:text-3xl">Projects ({projects.length})</h1>
                                 <div className="h-0.5 bg-gray-600" />
                                 <br/>
                                 {projectsPerCategory.map((category) => (
@@ -143,7 +143,7 @@ export default function Home() {
                                         <h1 className="text-3xl">{category.title}</h1>
                                         <br/>
                                         <h2>{category.key}</h2>
-                                        <div className="grid grid-cols-4 gap-5 m-5">
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 m-5">
                                             {category.value.map((project) => (
                                                 <div key={project.id}>
                                                     <Card project={project}/>
