@@ -2,8 +2,9 @@
 
 import Modal from "@/app/components/Modal";
 import Image from "next/image";
+import {Project} from "@/app/components/Data";
 
-export default function Card({ project }) {
+export default function Card({ project }: { project: Project }) {
 
     const imagesList = project.images.split(',').map(item => item.trim());
     const firstImage = imagesList[0];

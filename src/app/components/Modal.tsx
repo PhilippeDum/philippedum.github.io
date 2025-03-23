@@ -3,8 +3,9 @@
 import { useState } from "react";
 import HtmlToText from "@/app/components/HtmlToText";
 import Image from "next/image";
+import {Project} from "@/app/components/Data";
 
-export default function Modal({ project }) {
+export default function Modal({ project }: { project: Project }) {
     const [isOpen, setIsOpen] = useState(false);
 
     const openModal = () => setIsOpen(true);
@@ -59,7 +60,7 @@ export default function Modal({ project }) {
                                         <HtmlToText html={project.description} />
                                     </div>
                                     <div className="flex flex-col items-center">
-                                        {projectImages.map((image, id) => (
+                                        {projectImages.map((image: string, id: number) => (
                                             <div key={id} className="mb-4">
                                                 <Image
                                                     className="object-cover rounded"

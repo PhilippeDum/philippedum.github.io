@@ -30,8 +30,8 @@ function SetupProjects(projects: Project[], categories: Category[]) {
 export default function Projects(){
 
     const [projects, setProjects] = useState<Project[]>([])
-    const [projectsPerCategory, setProjectsPerCategory] = useState([])
-    const [error, setError] = useState(null);
+    const [projectsPerCategory, setProjectsPerCategory] = useState<{ key: string; value: Project[]; }[]>([])
+    const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
         async function fetchData() {
@@ -49,7 +49,11 @@ export default function Projects(){
                 const projectsSetup = SetupProjects(projectsData, categoriesData);
                 setProjectsPerCategory(projectsSetup);
             } catch (error) {
-                setError(error.message);
+                if (error instanceof Error) {
+                    setError(error.message);
+                } else {
+                    setError("An unknown error occurred.");
+                }
             }
         }
 
@@ -66,9 +70,8 @@ export default function Projects(){
                 <br/>
                 {projectsPerCategory.map((category) => (
                     <div key={category.key}>
-                        <h1 className="text-3xl">{category.title}</h1>
+                        <h1 className="text-2xl">{category.key}</h1>
                         <br/>
-                        <h2>{category.key}</h2>
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 m-5">
                             {category.value.map((project) => (
                                 <div key={project.id}>

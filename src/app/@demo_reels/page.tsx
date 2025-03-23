@@ -8,7 +8,7 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL;
 export default function DemoReels(){
 
     const [demoReels, setDemoReels] = useState<DemoReel[]>([]);
-    const [error, setError] = useState(null);
+    const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
         async function fetchDemoReels() {
@@ -21,7 +21,11 @@ export default function DemoReels(){
 
                 setDemoReels(data);
             } catch (error) {
-                setError(error.message);
+                if (error instanceof Error) {
+                    setError(error.message);
+                } else {
+                    setError("An unknown error occurred.");
+                }
             }
         }
 

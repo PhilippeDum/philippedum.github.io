@@ -73,6 +73,10 @@ export default async function Home() {
             </div>
         )
     } catch (error) {
-        return <h1 className="text-red-500">Erreur : {error.message}</h1>;
+        if (error instanceof Error){
+            return <h1 className="text-red-500">{error.message}</h1>;
+        } else {
+            return <h1 className="text-red-500">An unknown error occurred</h1>;
+        }
     }
 }
