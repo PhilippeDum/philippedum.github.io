@@ -20,9 +20,7 @@ interface LayoutProps {
 }
 
 export default function RootLayout({
-  children,
-    demo_reels,
-    projects
+  children
 }: LayoutProps) {
   return (
     <html lang="en">

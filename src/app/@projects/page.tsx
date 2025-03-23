@@ -30,7 +30,6 @@ function SetupProjects(projects: Project[], categories: Category[]) {
 export default function Projects(){
 
     const [projects, setProjects] = useState<Project[]>([])
-    const [categories, setCategories] = useState<Category[]>([]);
     const [projectsPerCategory, setProjectsPerCategory] = useState([])
     const [error, setError] = useState(null);
 
@@ -49,8 +48,6 @@ export default function Projects(){
                 setProjects(projectsData);
                 const projectsSetup = SetupProjects(projectsData, categoriesData);
                 setProjectsPerCategory(projectsSetup);
-
-                setCategories(categoriesData);
             } catch (error) {
                 setError(error.message);
             }
