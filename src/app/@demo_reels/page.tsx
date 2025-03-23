@@ -18,7 +18,7 @@ export default function DemoReels(){
                 if (!response.ok) throw new Error('Erreur lors de la récupération des demo reels');
 
                 const data = await response.json();
-                console.log(data);
+
                 setDemoReels(data);
             } catch (error) {
                 setError(error.message);
@@ -48,10 +48,8 @@ export default function DemoReels(){
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             referrerPolicy="strict-origin-when-cross-origin"
                             allowFullScreen
-                            onLoad={() => console.log(`Iframe chargé : ${demoReel.link}`)}
                             onError={() => console.log(` Erreur de chargement iframe : ${demoReel.link}`)}
                         />
-                        <h1>{demoReel.id}. {demoReel.title}</h1>
                     </div>
                 ))}
             </div>

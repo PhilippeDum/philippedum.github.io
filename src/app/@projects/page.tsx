@@ -1,4 +1,7 @@
-﻿import Card from "@/app/components/Card";
+﻿'use client'
+
+import { useEffect, useState } from "react";
+import Card from "@/app/components/Card";
 import {Category, Project} from "@/app/components/Data";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
@@ -24,60 +27,61 @@ function SetupProjects(projects: Project[], categories: Category[]) {
     return projectsPerCategory;
 }
 
-async function fetchCategories() {
+export default function Projects(){
 
-    const categoriesResponse = await fetch(`${API_URL}/api/categories`, { cache: "no-store" });
+    const [projects, setProjects] = useState<Project[]>([])
+    const [categories, setCategories] = useState<Category[]>([]);
+    const [projectsPerCategory, setProjectsPerCategory] = useState([])
+    const [error, setError] = useState(null);
 
-    if (!categoriesResponse.ok) {
-        throw new Error('Erreur lors de la récupération des catégories');
-    }
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const projectsResponse = await fetch(`${API_URL}/api/projects`, {cache: "no-store"});
+                const categoriesResponse = await fetch(`${API_URL}/api/categories`, {cache: "no-store"});
 
-    return categoriesResponse.json();
-}
+                if (!projectsResponse.ok) throw new Error('Erreur lors de la récupération des projets');
+                if (!categoriesResponse.ok) throw new Error('Erreur lors de la récupération des catégories');
 
-async function fetchProjects() {
+                const projectsData = await projectsResponse.json();
+                const categoriesData = await categoriesResponse.json();
 
-    const projectsResponse = await fetch(`${API_URL}/api/projects`, { cache: "no-store" });
+                setProjects(projectsData);
+                const projectsSetup = SetupProjects(projectsData, categoriesData);
+                setProjectsPerCategory(projectsSetup);
 
-    if (!projectsResponse.ok) {
-        throw new Error('Erreur lors de la récupération des projects');
-    }
+                setCategories(categoriesData);
+            } catch (error) {
+                setError(error.message);
+            }
+        }
 
-    return projectsResponse.json();
-}
+        fetchData();
+    }, []);
 
-export default async function Projects(){
+    if (error) return <h1 className="text-red-500">Erreur : {error}</h1>;
+    if (setProjects.length === 0) return <p>Chargement...</p>;
 
-    try{
-
-        const projects = await fetchProjects();
-        const categories = await fetchCategories();
-
-        const projectsPerCategory = SetupProjects(projects, categories);
-
-        return (
-            <div className="projects">
-                    <h1 className="sm:text-3xl">Projects ({projects.length})</h1>
-                    <div className="h-0.5 bg-gray-600" />
-                    <br/>
-                    {projectsPerCategory.map((category) => (
-                        <div key={category.key}>
-                            <h1 className="text-3xl">{category.title}</h1>
-                            <br/>
-                            <h2>{category.key}</h2>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 m-5">
-                                {category.value.map((project) => (
-                                    <div key={project.id}>
-                                        <Card project={project}/>
-                                    </div>
-                                ))}
-                            </div>
-                            <br/>
+    return (
+        <div className="projects">
+                <h1 className="sm:text-3xl">Projects ({projects.length})</h1>
+                <div className="h-0.5 bg-gray-600" />
+                <br/>
+                {projectsPerCategory.map((category) => (
+                    <div key={category.key}>
+                        <h1 className="text-3xl">{category.title}</h1>
+                        <br/>
+                        <h2>{category.key}</h2>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 m-5">
+                            {category.value.map((project) => (
+                                <div key={project.id}>
+                                    <Card project={project}/>
+                                </div>
+                            ))}
                         </div>
-                    ))}
-            </div>
-        )
-    } catch (error) {
-        return <h1 className="text-red-500">Erreur : {error.message}</h1>;
-    }
+                        <br/>
+                    </div>
+                ))}
+        </div>
+    )
 }
