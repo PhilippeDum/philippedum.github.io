@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Quicksand } from "next/font/google";
 import "./globals.css";
+import {DemoReel, Project} from "@/app/components/Data";
 
 const quicksandSans = Quicksand({
     variable: "--font-quicksand-sans",
@@ -13,15 +14,21 @@ export const metadata: Metadata = {
 };
 
 interface LayoutProps {
-    demo_reels: any;
-    projects: any;
+    demo_reels: DemoReel[];
+    projects: Project[];
     children: React.ReactNode;
 }
 
 export default function RootLayout({
-  children
+   demo_reels,
+   projects,
+   children
 }: LayoutProps) {
-  return (
+
+    if (!demo_reels || demo_reels.length === 0) console.error("Error on demo reels.");
+    if (!projects || projects.length === 0) console.error("Error on projects.");
+
+    return (
     <html lang="en">
       <body className={`${quicksandSans.variable} antialiased`}>
         {children}
