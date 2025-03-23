@@ -6,10 +6,10 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL;
 function SetupProjects(projects: Project[], categories: Category[]) {
     const projectsPerCategory = [];
 
-    for (let category of categories) {
+    for (const category of categories) {
         const categoryProject = [];
 
-        for (let project of projects) {
+        for (const project of projects) {
             if (category.id == project.category) {
                 categoryProject.push(project);
             }
