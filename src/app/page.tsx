@@ -1,181 +1,78 @@
-'use client'
-
 import Image from "next/image";
-import { useEffect, useState } from "react";
-import {DemoReel, Project, Category} from "@/app/components/Data";
-import Card from "@/app/components/Card";
+import {Suspense} from "react";
 import Link from "next/link";
+import Projects from "@/app/@projects/page";
+import DemoReels from "@/app/@demo_reels/page";
 
-function SetupProjects(projects: Project[], categories: Category[]) {
-    const projectsPerCategory = [];
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
-    for (let category of categories) {
-        const categoryProject = [];
+async function fetchContent() {
 
-        for (let project of projects) {
-            if (category.id == project.category) {
-                categoryProject.push(project);
-            }
-        }
+    const contentResponse = await fetch(`${API_URL}/api/content`, { cache: "no-store" });
 
-        projectsPerCategory.push({
-            key: category.title,
-            value: categoryProject
-        });
+    if (!contentResponse.ok) {
+        throw new Error('Erreur lors de la récupération des contents');
     }
 
-    return projectsPerCategory;
+    return contentResponse.json();
 }
 
-export default function Home() {
+export default async function Home() {
 
-    const [content, setContent] = useState<{ [key: string]: string }>({});
-    const [demo_reels, setDemo_reels] = useState<DemoReel[]>([]);
-    const [projects, setProjects] = useState<Project[]>([]);
-    const [projectsPerCategory, setProjectsPerCategory] = useState();
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+    try{
+        const content = await fetchContent();
 
-    useEffect(() => {
+        const contentDictionary = content.reduce((acc: { [key: string]: string }, item: { key: string, value: string }) => {
+            acc[item.key] = item.value;
+            return acc;
+        }, {});
 
-        const fetchData = async () => {
-            try {
-                const [contentResponse, demo_reelsResponse, projectsResponse, categoriesResponse] = await Promise.all([
-                    fetch('/api/content'),
-                    fetch('/api/demo_reels'),
-                    fetch('/api/projects'),
-                    fetch('/api/categories'),
-                ]);
+        return (
+            <div className="container flex justify-center items-center flex-col bg-gradient-to-br from-blue-900 via-purple-900 to-black">
 
-                if (!contentResponse.ok) {
-                    throw new Error('Erreur lors de la récupération du contenu');
-                }
+                <div className="whitespace-normal break-words">
+                    <Image src="/game_developer_banner.png" alt="developer_banner" layout="responsive" width={100} height={100}/>
+                    <main className="m-5">
 
-                if (!demo_reelsResponse.ok) {
-                    throw new Error('Erreur lors de la récupération des demo reels');
-                }
+                        <br/><br/><br/>
 
-                if (!projectsResponse.ok) {
-                    throw new Error('Erreur lors de la récupération des projects');
-                }
+                        <h1 className="flex justify-center text-center whitespace-pre-wrap sm:text-2xl">
+                            {contentDictionary["website_description"].replace('\\n', '').trim()}
+                        </h1>
 
-                if (!categoriesResponse.ok) {
-                    throw new Error('Erreur lors de la récupération des catégories');
-                }
+                        <br/><br/><br/>
 
-                const contentData = await contentResponse.json();
-                const contentDictionaryData = contentData.reduce((acc: { [key: string]: string }, item: { key: string, value: string }) => {
-                    acc[item.key] = item.value;
-                    return acc;
-                }, {});
-                const demo_reelsData = await demo_reelsResponse.json();
-                const projectsData = await projectsResponse.json();
-                const categoriesData = await categoriesResponse.json();
+                        <Suspense fallback={<p>Chargement des demo reels...</p>}>
+                            <DemoReels />
+                        </Suspense>
 
-                setContent(contentDictionaryData);
-                setDemo_reels(demo_reelsData);
-                setProjects(projectsData);
+                        <br/><br/>
 
-                const projectsPerCategory = SetupProjects(projectsData, categoriesData);
-                setProjectsPerCategory(projectsPerCategory);
-            } catch (error) {
-                console.error("Erreur au fetch : ", error, " (", error.message, ")");
-                setError(error.message);
-            } finally {
-                setLoading(false);
-            }
-        };
+                        <Suspense fallback={<p>Chargement des projets...</p>}>
+                            <Projects />
+                        </Suspense>
 
-        fetchData();
-    }, []);
+                    </main>
 
-    return (
-        <div className="container flex justify-center items-center flex-col bg-gradient-to-br from-blue-900 via-purple-900 to-black">
+                    <br/><br/><br/><br/>
 
-            <div className="whitespace-normal break-words">
-                <Image src="/game_developer_banner.png" alt="developer_banner" layout="responsive" width={100} height={100}/>
-                <main className="m-5">
+                    <div className="h-0.5 bg-gray-600" />
 
-                    <br/><br/><br/><br/><br/><br/>
+                    <footer className="justify-items-center m-5">
 
-                    {loading && <h1 className="text-3xl">Data loading...</h1>}
-                    {error && <h1 className="text-3xl">Error : {error}</h1>}
-                    {!loading && !error &&
-                        <div>
-
-                            <h1 className="flex justify-center text-center whitespace-pre-wrap sm:text-2xl">
-                                {content["website_description"].replace('\\n', '').trim()}
-                            </h1>
-
-                            <br/><br/><br/><br/>
-
-                            <div className="demo_reels">
-                                <br/>
-                                <h1 className="sm:text-3xl">Demo Reels ({demo_reels.length})</h1>
-                                <br/>
-                                <div className="h-0.5 bg-gray-600" />
-                                <br/>
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 m-5">
-                                    {demo_reels.map((demo_reel) => (
-                                        <div key={demo_reel.id}>
-                                            <iframe
-                                                src={demo_reel.link} title={demo_reel.title}
-                                                className="w-full aspect-video self-stretch md:min-h-96"
-                                                frameBorder="0" aria-hidden="true"
-                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                                referrerPolicy="strict-origin-when-cross-origin" allowFullScreen
-                                            />
-                                            <h1>{demo_reel.id}. {demo_reel.title}</h1>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-
-                            <br/><br/>
-
-                            <div className="projects">
-                                <br/>
-                                <h1 className="sm:text-3xl">Projects ({projects.length})</h1>
-                                <div className="h-0.5 bg-gray-600" />
-                                <br/>
-                                {projectsPerCategory.map((category) => (
-                                    <div key={category.key}>
-                                        <h1 className="text-3xl">{category.title}</h1>
-                                        <br/>
-                                        <h2>{category.key}</h2>
-                                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 m-5">
-                                            {category.value.map((project) => (
-                                                <div key={project.id}>
-                                                    <Card project={project}/>
-                                                </div>
-                                            ))}
-                                        </div>
-                                        <br/>
-                                    </div>
-                                ))}
-                            </div>
-
+                        <h1 className="sm:text-2xl">Contact :</h1>
+                        <br/>
+                        <div className="flex flex-col sm:flex-row gap-5 underline text-blue-400">
+                            <Link className="hover:text-blue-500" href={contentDictionary["github_link"] || "#"}>Github</Link>
+                            <Link className="hover:text-blue-500" href={contentDictionary["linkedin_link"] || "#"}>LinkedIn</Link>
+                            <Link className="hover:text-blue-500" href={contentDictionary["itchio_link"] || "#"}>Itch.io</Link>
                         </div>
-                    }
 
-                </main>
-
-                <br/><br/><br/><br/>
-
-                <div className="h-0.5 bg-gray-600" />
-
-                <footer className="justify-items-center m-5">
-
-                    <h1 className="sm:text-2xl">Contact :</h1>
-                    <br/>
-                    <div className="flex flex-col sm:flex-row gap-5 underline text-blue-400">
-                        <Link className="hover:text-blue-500" href={content["github_link"] || "#"}>Github</Link>
-                        <Link className="hover:text-blue-500" href={content["linkedin_link"] || "#"}>LinkedIn</Link>
-                        <Link className="hover:text-blue-500" href={content["itchio_link"] || "#"}>Itch.io</Link>
-                    </div>
-
-                </footer>
+                    </footer>
+                </div>
             </div>
-        </div>
-    );
+        );
+    } catch (error) {
+        return <h1 className="text-red-500">Erreur : {error.message}</h1>;
+    }
 }

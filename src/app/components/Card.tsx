@@ -13,9 +13,8 @@ export default function Card({ project }) {
         <div className="max-w-sm mx-auto rounded-2xl shadow-lg overflow-hidden">
             <img
                 className="w-full h-auto object-cover"
-                src={cardImage}
+                src={firstImage ? cardImage : defaultImage}
                 alt="Card Image"
-                onError={(e) => e.currentTarget.src = defaultImage} // default image
             />
             <div className="p-4 bg-gray-400 bg-opacity-30">
                 <h2 className="text-xl font-bold mb-2">{project.title}</h2>

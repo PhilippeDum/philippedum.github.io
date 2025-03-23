@@ -1,6 +1,7 @@
-﻿import { useState } from "react";
+﻿'use client'
+
+import { useState } from "react";
 import HtmlToText from "@/app/components/HtmlToText";
-import Card from "@/app/components/Card";
 
 export default function Modal({ project }) {
     const [isOpen, setIsOpen] = useState(false);
