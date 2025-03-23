@@ -71,7 +71,7 @@ export default async function Home() {
                     </footer>
                 </div>
             </div>
-        );
+        )
     } catch (error) {
         return <h1 className="text-red-500">Erreur : {error.message}</h1>;
     }
