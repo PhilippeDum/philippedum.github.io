@@ -31,7 +31,7 @@ export default async function Home() {
             <div className="container flex justify-center items-center flex-col bg-gradient-to-br from-blue-900 via-purple-900 to-black">
 
                 <div className="whitespace-normal break-words">
-                    <Image src="/game_developer_banner.png" alt="developer_banner" layout="responsive" width={100} height={100}/>
+                    <Image src="/game_developer_banner.png" alt="developer_banner" width={3000} height={300}/>
                     <main className="m-5">
 
                         <br/><br/><br/>

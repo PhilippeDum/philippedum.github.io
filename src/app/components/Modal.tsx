@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import HtmlToText from "@/app/components/HtmlToText";
+import Image from "next/image";
 
 export default function Modal({ project }) {
     const [isOpen, setIsOpen] = useState(false);
@@ -60,11 +61,12 @@ export default function Modal({ project }) {
                                     <div className="flex flex-col items-center">
                                         {projectImages.map((image, id) => (
                                             <div key={id} className="mb-4">
-                                                <img
+                                                <Image
                                                     className="object-cover rounded"
                                                     src={"/projects/" + image}
                                                     alt={image}
-                                                    onError={(e) => e.currentTarget.alt = image}
+                                                    width={500}
+                                                    height={500}
                                                 />
                                                 <br/>
                                             </div>

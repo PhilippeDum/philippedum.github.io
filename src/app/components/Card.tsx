@@ -1,6 +1,7 @@
 ﻿// components/Card.js
 
 import Modal from "@/app/components/Modal";
+import Image from "next/image";
 
 export default function Card({ project }) {
 
@@ -11,10 +12,12 @@ export default function Card({ project }) {
 
     return (
         <div className="max-w-sm mx-auto rounded-2xl shadow-lg overflow-hidden">
-            <img
-                className="w-full h-auto object-cover"
+            <Image
+                className="object-cover rounded"
                 src={firstImage ? cardImage : defaultImage}
-                alt="Card Image"
+                alt={cardImage}
+                width={500}
+                height={500}
             />
             <div className="p-4 bg-gray-400 bg-opacity-30">
                 <h2 className="text-xl font-bold mb-2">{project.title}</h2>
