@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Quicksand } from "next/font/google";
 import "./globals.css";
-import {DemoReel, Project} from "@/app/components/Data";
 
 const quicksandSans = Quicksand({
     variable: "--font-quicksand-sans",
@@ -14,8 +13,8 @@ export const metadata: Metadata = {
 };
 
 interface LayoutProps {
-    demo_reels: DemoReel[];
-    projects: Project[];
+    demo_reels: any;
+    projects: any;
     children: React.ReactNode;
 }
 
