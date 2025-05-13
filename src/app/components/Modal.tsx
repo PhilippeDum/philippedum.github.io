@@ -13,6 +13,8 @@ export default function Modal({ project }: { project: Project }) {
 
     const projectImages = project.images.split(', ');
 
+    const defaultImage = "/projects/a_venir.png";
+
     return (
         <div>
             <button className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600"
@@ -38,17 +40,25 @@ export default function Modal({ project }: { project: Project }) {
                         </div>
 
                         <div>
-                            <iframe
-                                src={project.video}
-                                className="w-5/6 md:w-1/2 aspect-video mx-auto md:min-h-96 mt-4"
-                                frameBorder="0"
-                                aria-hidden="true"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                referrerPolicy="strict-origin-when-cross-origin"
-                                allowFullScreen
-                            />
-
-                            <br/>
+                            {project.video == "" ?
+                                <Image
+                                    className="object-cover rounded w-5/6 md:w-1/2 aspect-video mx-auto md:min-h-96 mt-4"
+                                    src={defaultImage}
+                                    alt={defaultImage}
+                                    width={500}
+                                    height={500}
+                                />
+                                :
+                                <iframe
+                                    src={project.video}
+                                    className="w-5/6 md:w-1/2 aspect-video mx-auto md:min-h-96 mt-4"
+                                    frameBorder="0"
+                                    aria-hidden="true"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerPolicy="strict-origin-when-cross-origin"
+                                    allowFullScreen
+                                />
+                            }
 
                             {project.images.length == 0 ? (
                                 <HtmlToText html={project.description} />
