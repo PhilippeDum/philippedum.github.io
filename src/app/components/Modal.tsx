@@ -22,22 +22,22 @@ export default function Modal({ project }: { project: Project }) {
 
             {isOpen && (
                 <div className="fixed inset-0 flex justify-center items-center bg-gray-600 bg-opacity-50 z-50">
-                    <div className="bg-white rounded-md shadow-lg w-8/12 h-5/6 text-black overflow-auto border-8" style={{ borderColor: project.color }}
+                    <div className="bg-white rounded-md shadow-lg w-11/12 h-5/6 text-black overflow-auto border-8" style={{ borderColor: project.color }}
                          onClick={(e) => e.stopPropagation()}>
 
                         <div className="sticky top-0 bg-white z-10 p-8 pb-0">
                             <div className="flex flex-row justify-between">
-                                <h2 className="sm:text-3xl"><strong style={{ color: project.color }}>{project.title}</strong></h2>
-                                <button className="bg-red-500 text-white h-10 sm:py-2 sm:px-4 rounded-md hover:bg-red-600"
+                                <h2 className="text-3xl"><strong style={{ color: project.color }}>{project.title}</strong></h2>
+                                <button className="bg-red-500 text-white w-10 h-10 sm:py-2 sm:px-4 rounded-md hover:bg-red-600"
                                         onClick={closeModal}>
-                                    Close
+                                    X
                                 </button>
                             </div>
                             <br/>
                             <div className="h-0.5 bg-gray-600" />
                         </div>
 
-                        <div className="p-8">
+                        <div>
                             <iframe
                                 src={project.video}
                                 className="w-5/6 md:w-1/2 aspect-video mx-auto md:min-h-96 mt-4"
@@ -48,18 +48,16 @@ export default function Modal({ project }: { project: Project }) {
                                 allowFullScreen
                             />
 
-                            <br/><br/>
+                            <br/>
 
                             {project.images.length == 0 ? (
-                                <div>
-                                    <HtmlToText html={project.description} />
-                                </div>
+                                <HtmlToText html={project.description} />
                             ) : (
                                 <div className="grid md:grid-cols-[60%_40%] mt-6 gap-4">
                                     <div>
                                         <HtmlToText html={project.description} />
                                     </div>
-                                    <div className="flex flex-col items-center">
+                                    <div className="flex flex-col items-center p-8">
                                         {projectImages.map((image: string, id: number) => (
                                             <div key={id} className="mb-4">
                                                 <Image

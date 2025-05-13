@@ -11,7 +11,7 @@ const HtmlToText = ({ html }) => {
     };
 
     return (
-        <div>
+        <div className="p-8">
             <pre style={{ fontFamily: 'inherit', whiteSpace: 'pre-wrap' }}>
                 {htmlToText(html)}
             </pre>
