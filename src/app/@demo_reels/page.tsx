@@ -38,7 +38,7 @@ export default function DemoReels(){
     return (
         <div className="demo_reels">
             <br/>
-            <h1 className="sm:text-3xl">Demo Reels ({demoReels.length})</h1>
+            <h1 className="sm:text-3xl">Demo Reels</h1>
             <br/>
             <div className="h-0.5 bg-gray-600" />
             <br/>

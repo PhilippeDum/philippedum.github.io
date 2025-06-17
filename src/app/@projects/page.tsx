@@ -65,7 +65,7 @@ export default function Projects(){
 
     return (
         <div className="projects">
-                <h1 className="sm:text-3xl">Projects ({projects.length})</h1>
+                <h1 className="sm:text-3xl">Projects</h1>
                 <div className="h-0.5 bg-gray-600" />
                 <br/>
                 {projectsPerCategory.map((category) => (
