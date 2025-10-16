@@ -1,26 +1,44 @@
 import Image from "next/image";
-import {Suspense} from "react";
 import Link from "next/link";
+import {Suspense} from "react";
 import Projects from "@/app/@projects/page";
 import DemoReels from "@/app/@demo_reels/page";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
-async function fetchContent() {
+function ShowError(error: string){
+    return (
+        <div className="h-screen container flex justify-center items-center flex-col bg-gradient-to-br from-blue-900 via-purple-900 to-black">
+            <h1 className="sm:text-2xl">Erreur détectée !</h1>
+            <h1 className="sm:text-xl">{error}</h1>
+        </div>
+    );
+}
 
-    const contentResponse = await fetch(`${API_URL}/api/content`, { cache: "no-store" });
+async function fetchData() {
 
-    if (!contentResponse.ok) {
-        throw new Error('Erreur lors de la récupération des contents');
+    const response = await fetch(`${API_URL}/devfolio_data.json`, { cache: "no-store" });
+
+    if (!response.ok){
+        return null;
     }
 
-    return contentResponse.json();
+    return response.json();
 }
 
 export default async function Home() {
 
     try{
-        const content = await fetchContent();
+        const data = await fetchData();
+
+        if (!data){
+            return ShowError('Erreur lors de la récupération des données');
+        }
+
+        const content = data.content;
+        const demo_reels = data.demo_reels;
+        const projects = data.projects;
+        const categories = data.categories;
 
         const contentDictionary = content.reduce((acc: { [key: string]: string }, item: { key: string, value: string }) => {
             acc[item.key] = item.value;
@@ -43,13 +61,13 @@ export default async function Home() {
                         <br/><br/><br/>
 
                         <Suspense fallback={<p>Chargement des demo reels...</p>}>
-                            <DemoReels />
+                            <DemoReels demo_reels={demo_reels} />
                         </Suspense>
 
                         <br/><br/>
 
                         <Suspense fallback={<p>Chargement des projets...</p>}>
-                            <Projects />
+                            <Projects projects={projects} categories={categories} />
                         </Suspense>
 
                     </main>
