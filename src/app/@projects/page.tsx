@@ -31,8 +31,10 @@ interface ProjectsSetupProps {
 }
 
 export default function Projects({ projects, categories }: ProjectsSetupProps){
+    const projectsList = projects ?? [];
+    const categoriesList = categories ?? [];
 
-    const projectsSetup = SetupProjects(projects, categories);
+    const projectsSetup = SetupProjects(projectsList, categoriesList) ?? [];
 
     if (!projectsSetup || projectsSetup.length === 0) return <p>Aucun projet disponible.</p>;
 
@@ -48,7 +50,6 @@ export default function Projects({ projects, categories }: ProjectsSetupProps){
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 m-5">
                             {category.value.map((project) => (
                                 <div key={project.id}>
-                                    <h1>{project.id}</h1>
                                     <Card project={project}/>
                                 </div>
                             ))}

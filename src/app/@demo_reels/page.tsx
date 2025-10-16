@@ -5,7 +5,6 @@ interface DemoReelsProps {
 }
 
 export default function DemoReels({ demo_reels }: DemoReelsProps) {
-
     if (!demo_reels || demo_reels.length === 0) return <p>Aucune démo disponible.</p>;
 
     return (

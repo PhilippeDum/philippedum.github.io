@@ -16,7 +16,6 @@ function ShowError(error: string){
 }
 
 async function fetchData() {
-
     const response = await fetch(`${API_URL}/devfolio_data.json`, { cache: "no-store" });
 
     if (!response.ok){
@@ -27,18 +26,17 @@ async function fetchData() {
 }
 
 export default async function Home() {
-
     try{
         const data = await fetchData();
 
-        if (!data){
+        if (!data) {
             return ShowError('Erreur lors de la récupération des données');
         }
 
-        const content = data.content;
-        const demo_reels = data.demo_reels;
-        const projects = data.projects;
-        const categories = data.categories;
+        const content = data?.content ?? [];
+        const demo_reels = data?.demo_reels ?? [];
+        const projects = data?.projects ?? [];
+        const categories = data?.categories ?? [];
 
         const contentDictionary = content.reduce((acc: { [key: string]: string }, item: { key: string, value: string }) => {
             acc[item.key] = item.value;
@@ -91,6 +89,7 @@ export default async function Home() {
             </div>
         )
     } catch (error) {
+        console.log(error)
         if (error instanceof Error){
             return <h1 className="text-red-500">{error.message}</h1>;
         } else {
