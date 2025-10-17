@@ -53,7 +53,9 @@ export default async function Home() {
                         <br/><br/><br/>
 
                         <h1 className="flex justify-center text-center whitespace-pre-wrap sm:text-2xl">
-                            {contentDictionary["website_description"].replace('\\n', '').trim()}
+                            {contentDictionary["website_description"]
+                                ? contentDictionary["website_description"].replace('\\n', '').trim()
+                                : ""}
                         </h1>
 
                         <br/><br/><br/>
