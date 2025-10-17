@@ -1,24 +1,53 @@
 {
   "content": [
-    { "id": 1, "key": "website_description", "value": "Hello, je suis un Développeur Jeux vidéo junior de 24 ans travaillant essentiellement sur Unity 3D.\n\\nVoici mes bandes démos et projets réalisés durant mes études." },
-    { "id": 2, "key": "linkedin_link", "value": "https://www.linkedin.com/in/philippe-dumoulin/" },
-    { "id": 3, "key": "github_link", "value": "https://github.com/PhilippeDum" },
-    { "id": 4, "key": "itchio_link", "value": "https://dumoulin-philippe.itch.io/" }
+    {
+      "id": 1,
+      "Key": "website_description",
+      "Value": "Hello, je suis un D\u00E9veloppeur Jeux vid\u00E9o junior de 24 ans travaillant essentiellement sur Unity 3D.\n\\nVoici mes bandes d\u00E9mos et projets r\u00E9alis\u00E9s durant mes \u00E9tudes."
+    },
+    {
+      "id": 2,
+      "Key": "linkedin_link",
+      "Value": "https://www.linkedin.com/in/philippe-dumoulin/"
+    },
+    {
+      "id": 3,
+      "Key": "github_link",
+      "Value": "https://github.com/PhilippeDum"
+    },
+    {
+      "id": 4,
+      "Key": "itchio_link",
+      "Value": "https://dumoulin-philippe.itch.io/"
+    },
+    {
+      "id": 0,
+      "Key": "test",
+      "Value": "test"
+    }
   ],
   "demo_reels": [
-    { "id": 1, "title": "Demo Reel 2022", "link": "https://www.youtube.com/embed/rciUJPjo0gg?si=Gktad-gZ96Eo92EO" },
-    { "id": 2, "title": "Demo Reel 2023", "link": "https://www.youtube.com/embed/JLg6lC7rMzc?si=Iyijl1Ot4ENQ8IPq" }
+    {
+      "id": 1,
+      "title": "Demo Reel 2022",
+      "link": "https://www.youtube.com/embed/rciUJPjo0gg?si=Gktad-gZ96Eo92EO"
+    },
+    {
+      "id": 2,
+      "title": "Demo Reel 2023",
+      "link": "https://www.youtube.com/embed/JLg6lC7rMzc?si=Iyijl1Ot4ENQ8IPq"
+    }
   ],
   "projects": [
     {
       "id": 1,
       "title": "Knitcut",
-      "description": "<div lang=\"en\" style=\"font-size: 12px; color: #FF000000;\"><p><span>Knitcut est un jeu de simulation de ferme o&#249; le joueur incarne un fermier.</span></p>\n<p><span></span></p>\n<p><span></span></p>\n<p><span></span></p>\n<p><span>Il va ainsi pouvoir d&#233;velopper sa ferme en effectuant diff&#233;rentes actions :</span></p>\n<p><span></span></p>\n<p><span>- Capture des animaux dans une zone sauvage : </span><br/><span>Mini jeu puzzle o&#249; il faut reconstituer le chemin reliant l&#39;animal &#224; son enclos</span></p>\n<p><span></span></p>\n<p><span>- Am&#233;lioration des diff&#233;rents enclos (augmente le nombre d&#39;animaux pouvant &#234;tre captur&#233;s)</span></p>\n<p><span></span></p>\n<p><span>- Gestion des animaux (reproduction &amp; r&#233;cup&#233;ration de laine) : </span><br/><span>Mini jeu &quot;Effeuiller la marguerite&quot;</span></p>\n<p><span></span></p>\n<p><span>- Gestion de l&#39;agriculture (plantation) : diff&#233;rentes &#233;tapes de l&#39;&#233;volution d&#39;une plante</span></p>\n<p><span></span></p>\n<p><span>- Cuisine (produire des plats avec des fruits et autres pour de la revente) : </span><br/><span>Mini jeu &quot;Fruit ninja&quot;</span></p>\n<p><span></span></p>\n<p><span>- Village marchand (achat et vente pour des graines, fruits et enclos)</span></p>\n<p><span></span></p>\n<p><span></span></p>\n<p><span></span></p>\n<p><span>C&#39;est un projet &#233;tudiant en 3D r&#233;alis&#233; en groupe sur une dur&#233;e d&#39;un an.</span></p>\n</div>",
+      "description": "\u003Cdiv lang=\u0022en\u0022 style=\u0022font-size: 12px; color: #FF000000;\u0022\u003E\u003Cp\u003E\u003Cspan\u003EKnitcut est un jeu de simulation de ferme o\u0026#249; le joueur incarne un fermier.\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003EIl va ainsi pouvoir d\u0026#233;velopper sa ferme en effectuant diff\u0026#233;rentes actions :\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E- Capture des animaux dans une zone sauvage : \u003C/span\u003E\u003Cbr/\u003E\u003Cspan\u003EMini jeu puzzle o\u0026#249; il faut reconstituer le chemin reliant l\u0026#39;animal \u0026#224; son enclos\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E- Am\u0026#233;lioration des diff\u0026#233;rents enclos (augmente le nombre d\u0026#39;animaux pouvant \u0026#234;tre captur\u0026#233;s)\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E- Gestion des animaux (reproduction \u0026amp; r\u0026#233;cup\u0026#233;ration de laine) : \u003C/span\u003E\u003Cbr/\u003E\u003Cspan\u003EMini jeu \u0026quot;Effeuiller la marguerite\u0026quot;\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E- Gestion de l\u0026#39;agriculture (plantation) : diff\u0026#233;rentes \u0026#233;tapes de l\u0026#39;\u0026#233;volution d\u0026#39;une plante\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E- Cuisine (produire des plats avec des fruits et autres pour de la revente) : \u003C/span\u003E\u003Cbr/\u003E\u003Cspan\u003EMini jeu \u0026quot;Fruit ninja\u0026quot;\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E- Village marchand (achat et vente pour des graines, fruits et enclos)\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003EC\u0026#39;est un projet \u0026#233;tudiant en 3D r\u0026#233;alis\u0026#233; en groupe sur une dur\u0026#233;e d\u0026#39;un an.\u003C/span\u003E\u003C/p\u003E\n\u003C/div\u003E",
       "date": "10/06/2024",
       "color": "#eb8c34",
       "genre": "Simulation",
       "tag": 1,
-      "tagline": "Projet étudiant type simulation de ferme en 3D créé en groupe sur 1 an",
+      "tagline": "Projet \u00E9tudiant type simulation de ferme en 3D cr\u00E9\u00E9 en groupe sur 1 an",
       "images": "knitcut/knitcut_menu.jpg",
       "video": "https://www.youtube.com/embed/LDG_QTGV0J0?si=aQfa2pRTm45SpeDo",
       "category": 1
@@ -26,12 +55,12 @@
     {
       "id": 2,
       "title": "Rondouillard Park",
-      "description": "<div lang=\"en\" style=\"font-size: 12px; color: #FF000000;\"><p><span>Rondouillard Park est un projet &#233;tudiant en 3D r&#233;alis&#233; en groupe sur 1 semaine.</span></p>\n<p><span></span></p>\n<p><span>C&#39;est un simulateur de parc avec lequel le joueur pourra int&#233;ragir dans le but de le faire prosp&#233;rer et d&#39;attirer de plus en plus de visiteurs !</span></p>\n<p><span>Mais quelle est la particularit&#233; de ce jeu ? </span></p>\n<p><span>Des animaux tout ronds !Comment obtenir des animaux ? </span></p>\n<p><span>C&#39;est simple, lancer une exp&#233;dition &#224; travers le monde et admirez vos trouvailles !</span></p>\n<p><span></span></p>\n<p><span>R&#233;f&#233;rences : Zoo Tycoon et Jurassic World Evolution</span></p>\n</div>",
+      "description": "\u003Cdiv lang=\u0022en\u0022 style=\u0022font-size: 12px; color: #FF000000;\u0022\u003E\u003Cp\u003E\u003Cspan\u003ERondouillard Park est un projet \u0026#233;tudiant en 3D r\u0026#233;alis\u0026#233; en groupe sur 1 semaine.\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003EC\u0026#39;est un simulateur de parc avec lequel le joueur pourra int\u0026#233;ragir dans le but de le faire prosp\u0026#233;rer et d\u0026#39;attirer de plus en plus de visiteurs !\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003EMais quelle est la particularit\u0026#233; de ce jeu ? \u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003EDes animaux tout ronds !Comment obtenir des animaux ? \u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003EC\u0026#39;est simple, lancer une exp\u0026#233;dition \u0026#224; travers le monde et admirez vos trouvailles !\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003ER\u0026#233;f\u0026#233;rences : Zoo Tycoon et Jurassic World Evolution\u003C/span\u003E\u003C/p\u003E\n\u003C/div\u003E",
       "date": "10/06/2024",
       "color": "#826451",
       "genre": "Simulation",
       "tag": 1,
-      "tagline": "Rondouillard Park est un projet étudiant en 3D réalisé en groupe sur 1 semaine",
+      "tagline": "Rondouillard Park est un projet \u00E9tudiant en 3D r\u00E9alis\u00E9 en groupe sur 1 semaine",
       "images": "rondouillard_park/rondouillard_park_menu.png",
       "video": "https://www.youtube.com/embed/vDrnCG-GYfo?si=dcp_vM8MCTF8NPYz",
       "category": 1
@@ -39,12 +68,12 @@
     {
       "id": 3,
       "title": "Spore-like",
-      "description": "<div lang=\"en\" style=\"font-size: 12px; color: #FF000000;\"><p><span>Spore-like est un projet 3D &#233;tudiant r&#233;alis&#233; en 1 journ&#233;e et en &#233;quipe de 4 sur le th&#232;me A small world.</span></p>\n<p><span></span></p>\n<p><span>Projet bas&#233; sur le jeu Spore.</span></p>\n<p><span></span></p>\n<p><span>Mon r&#244;le :</span></p>\n<p><span>- Syst&#232;me d&#39;&#233;volution</span></p>\n<p><span>- Evolution de la cellule avec modification de l&#39;apparence physique</span></p>\n<p><span>- Utilisation des ScriptableObjects.</span></p>\n<p><span>- Syst&#232;me de r&#233;gime alimentaire carnivore / omnivore / herbivore selon le type d&#39;aliment consomm&#233;</span></p>\n<p><span>- G&#233;n&#233;ration d&#39;ennemi</span></p>\n<p><span>- G&#233;n&#233;ration al&#233;atoire</span></p>\n<p><span>- Base (Corps) similaire &#224; tous selon le r&#233;gime alimentaire</span></p>\n<p><span>- Elements (yeux, nageoires, piques) instanci&#233;s X fois &#224; une position al&#233;atoire</span></p>\n<p><span></span></p>\n<p><span>Equipe :</span></p>\n<p><span>- Stanczyk Alex (Artiste 3D, UI Design, Textures)</span></p>\n<p><span>- Fresnel Justyne (Artiste 3D, Concept Art, Textures)</span></p>\n<p><span>- Souillard Thomas (D&#233;veloppeur, Int&#233;gration)</span></p>\n<p><span>- Dumoulin Philippe (D&#233;veloppeur, Int&#233;gration)</span></p>\n</div>",
+      "description": "\u003Cdiv lang=\u0022en\u0022 style=\u0022font-size: 12px; color: #FF000000;\u0022\u003E\u003Cp\u003E\u003Cspan\u003ESpore-like est un projet 3D \u0026#233;tudiant r\u0026#233;alis\u0026#233; en 1 journ\u0026#233;e et en \u0026#233;quipe de 4 sur le th\u0026#232;me A small world.\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003EProjet bas\u0026#233; sur le jeu Spore.\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003EMon r\u0026#244;le :\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E- Syst\u0026#232;me d\u0026#39;\u0026#233;volution\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E- Evolution de la cellule avec modification de l\u0026#39;apparence physique\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E- Utilisation des ScriptableObjects.\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E- Syst\u0026#232;me de r\u0026#233;gime alimentaire carnivore / omnivore / herbivore selon le type d\u0026#39;aliment consomm\u0026#233;\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E- G\u0026#233;n\u0026#233;ration d\u0026#39;ennemi\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E- G\u0026#233;n\u0026#233;ration al\u0026#233;atoire\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E- Base (Corps) similaire \u0026#224; tous selon le r\u0026#233;gime alimentaire\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E- Elements (yeux, nageoires, piques) instanci\u0026#233;s X fois \u0026#224; une position al\u0026#233;atoire\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003EEquipe :\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E- Stanczyk Alex (Artiste 3D, UI Design, Textures)\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E- Fresnel Justyne (Artiste 3D, Concept Art, Textures)\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E- Souillard Thomas (D\u0026#233;veloppeur, Int\u0026#233;gration)\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E- Dumoulin Philippe (D\u0026#233;veloppeur, Int\u0026#233;gration)\u003C/span\u003E\u003C/p\u003E\n\u003C/div\u003E",
       "date": "28/03/2024",
       "color": "#94C1E3",
       "genre": "Adventure",
       "tag": 1,
-      "tagline": "Projet étudiant type plateformer en 3D créé en groupe en 1 journée",
+      "tagline": "Projet \u00E9tudiant type plateformer en 3D cr\u00E9\u00E9 en groupe en 1 journ\u00E9e",
       "images": "spore-like/spore-like_screen_0.png, spore-like/spore-like_screen_1.png, spore-like/spore-like_screen_2.png, spore-like/spore-like_screen_3.png",
       "video": "https://www.youtube.com/embed/GoJV6-osN1w?si=0De7PG27Q_fOT8aK",
       "category": 1
@@ -52,7 +81,7 @@
     {
       "id": 4,
       "title": "Le voyage des ames",
-      "description": "<div lang=\"en\" style=\"font-size: 12px; color: #FF000000;\"><p><span>A venir</span></p>\n</div>",
+      "description": "\u003Cdiv lang=\u0022en\u0022 style=\u0022font-size: 12px; color: #FF000000;\u0022\u003E\u003Cp\u003E\u003Cspan\u003EA venir\u003C/span\u003E\u003C/p\u003E\n\u003C/div\u003E",
       "date": "14/06/2024",
       "color": "#4A325A",
       "genre": "Riddle",
@@ -64,8 +93,8 @@
     },
     {
       "id": 5,
-      "title": "Îles volantes",
-      "description": "<div lang=\"en\" style=\"font-size: 12px; color: #FF000000;\"><p><span>Concernant le th&#232;me &quot;Ile volante&quot;, j&#39;ai choisi de partir sur un platformer dans lequel l&#39;ile volante part d&#39;un point A et doit atteindre un point B.</span></p>\n<p><span></span></p>\n<p><span>Pour cela, il ne faut pas que le poids total de l&#39;&#238;le d&#233;passe une certaine limite qui sera mise &#224; l&#39;&#233;preuve avec diff&#233;rents d&#233;bris qui tomberont du ciel.</span></p>\n<p><span></span></p>\n<p><span>Le joueur devra alors d&#233;barrasser les d&#233;bris de l&#39;&#238;le afin de stabiliser le poids, tout cela dans un temps imparti.</span></p>\n<p><span></span></p>\n<p><span>C&#39;est un projet &#233;tudiant en 3D r&#233;alis&#233; seul sur une journ&#233;e.</span></p>\n</div>",
+      "title": "\u00CEles volantes",
+      "description": "\u003Cdiv lang=\u0022en\u0022 style=\u0022font-size: 12px; color: #FF000000;\u0022\u003E\u003Cp\u003E\u003Cspan\u003EConcernant le th\u0026#232;me \u0026quot;Ile volante\u0026quot;, j\u0026#39;ai choisi de partir sur un platformer dans lequel l\u0026#39;ile volante part d\u0026#39;un point A et doit atteindre un point B.\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003EPour cela, il ne faut pas que le poids total de l\u0026#39;\u0026#238;le d\u0026#233;passe une certaine limite qui sera mise \u0026#224; l\u0026#39;\u0026#233;preuve avec diff\u0026#233;rents d\u0026#233;bris qui tomberont du ciel.\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003ELe joueur devra alors d\u0026#233;barrasser les d\u0026#233;bris de l\u0026#39;\u0026#238;le afin de stabiliser le poids, tout cela dans un temps imparti.\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003EC\u0026#39;est un projet \u0026#233;tudiant en 3D r\u0026#233;alis\u0026#233; seul sur une journ\u0026#233;e.\u003C/span\u003E\u003C/p\u003E\n\u003C/div\u003E",
       "date": "14/06/2024",
       "color": "#8ADECC",
       "genre": "Platformer",
@@ -78,12 +107,12 @@
     {
       "id": 6,
       "title": "Cloud Runner",
-      "description": "<div lang=\"en\" style=\"font-size: 12px; color: #FF000000;\"><p><span>Cloud Runner est un projet 3D &#233;tudiant r&#233;alis&#233; en 1 journ&#233;e et seul sur le th&#232;me S&#233;curit&#233; dans le noir.</span></p>\n<p><span></span></p>\n<p><span>Concept :</span></p>\n<p><span>Le joueur doit traverser les diff&#233;rentes plateformes repr&#233;sentant des nuages tout en &#233;vitant les anges qui lui sont invisibles.</span></p>\n<p><span>Le seul moyen qu&#39;il a de les voir est de s&#39;introduire &#224; l&#39;int&#233;rieur des zones sombres ou lorsque le joueur clignera des yeux.</span></p>\n<p><span></span></p>\n<p><span>En r&#233;f&#233;rence &#224; la s&#233;rie Doctor Who.</span></p>\n</div>",
+      "description": "\u003Cdiv lang=\u0022en\u0022 style=\u0022font-size: 12px; color: #FF000000;\u0022\u003E\u003Cp\u003E\u003Cspan\u003ECloud Runner est un projet 3D \u0026#233;tudiant r\u0026#233;alis\u0026#233; en 1 journ\u0026#233;e et seul sur le th\u0026#232;me S\u0026#233;curit\u0026#233; dans le noir.\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003EConcept :\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003ELe joueur doit traverser les diff\u0026#233;rentes plateformes repr\u0026#233;sentant des nuages tout en \u0026#233;vitant les anges qui lui sont invisibles.\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003ELe seul moyen qu\u0026#39;il a de les voir est de s\u0026#39;introduire \u0026#224; l\u0026#39;int\u0026#233;rieur des zones sombres ou lorsque le joueur clignera des yeux.\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003EEn r\u0026#233;f\u0026#233;rence \u0026#224; la s\u0026#233;rie Doctor Who.\u003C/span\u003E\u003C/p\u003E\n\u003C/div\u003E",
       "date": "28/03/2024",
       "color": "#4EBF75",
       "genre": "Platformer",
       "tag": 1,
-      "tagline": "Projet étudiant type plateformer en 3D créé seul en 1 journée",
+      "tagline": "Projet \u00E9tudiant type plateformer en 3D cr\u00E9\u00E9 seul en 1 journ\u00E9e",
       "images": "cloud_runner/cloud_runner_menu.png, cloud_runner/cloud_runner_screen_1.png, cloud_runner/cloud_runner_screen_2.png, cloud_runner/cloud_runner_screen_3.png, cloud_runner/cloud_runner_screen_4.png",
       "video": "https://www.youtube.com/embed/oT2yoxQvR88?si=-cRAkXX8CT4-faG2",
       "category": 2
@@ -91,20 +120,20 @@
     {
       "id": 7,
       "title": "Underwater VR",
-      "description": "<div lang=\"en\" style=\"font-size: 12px; color: #FF000000;\"><p><span>La demande &#233;tait de r&#233;aliser un petit jeu ludique simple en VR destin&#233; &#224; des enfants.</span></p>\n<p><span></span></p>\n<p><span>Notre choix s&#39;est port&#233; sur une pr&#233;sentation d&#39;animaux marins associ&#233; au nettoyage des oc&#233;ans :</span></p>\n<p><span></span></p>\n<p><span>Au d&#233;but, le joueur arrive dans une zone s&#233;curis&#233;e et d&#233;limit&#233;e ou il faudra ramasser les diff&#233;rents d&#233;chets et les jeter dans la poubelle.</span></p>\n<p><span></span></p>\n<p><span>A la suite de cette action, il va obtenir des coraux qu&#39;il faudra d&#233;poser sur la grille.</span></p>\n<p><span></span></p>\n<p><span>Apr&#232;s avoir d&#233;pos&#233; un certain nombre de coraux, diff&#233;rentes esp&#232;ces de poissons vont commencer &#224; appara&#238;tre et le joueur aura une pr&#233;sentation visuelle et auditive.</span></p>\n<p><span></span></p>\n<p><span>C&#39;est un projet &#233;tudiant en 3D r&#233;alis&#233; en groupe sur une dur&#233;e de 4 jours.</span></p>\n</div>",
+      "description": "\u003Cdiv lang=\u0022en\u0022 style=\u0022font-size: 12px; color: #FF000000;\u0022\u003E\u003Cp\u003E\u003Cspan\u003ELa demande \u0026#233;tait de r\u0026#233;aliser un petit jeu ludique simple en VR destin\u0026#233; \u0026#224; des enfants.\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003ENotre choix s\u0026#39;est port\u0026#233; sur une pr\u0026#233;sentation d\u0026#39;animaux marins associ\u0026#233; au nettoyage des oc\u0026#233;ans :\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003EAu d\u0026#233;but, le joueur arrive dans une zone s\u0026#233;curis\u0026#233;e et d\u0026#233;limit\u0026#233;e ou il faudra ramasser les diff\u0026#233;rents d\u0026#233;chets et les jeter dans la poubelle.\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003EA la suite de cette action, il va obtenir des coraux qu\u0026#39;il faudra d\u0026#233;poser sur la grille.\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003EApr\u0026#232;s avoir d\u0026#233;pos\u0026#233; un certain nombre de coraux, diff\u0026#233;rentes esp\u0026#232;ces de poissons vont commencer \u0026#224; appara\u0026#238;tre et le joueur aura une pr\u0026#233;sentation visuelle et auditive.\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003EC\u0026#39;est un projet \u0026#233;tudiant en 3D r\u0026#233;alis\u0026#233; en groupe sur une dur\u0026#233;e de 4 jours.\u003C/span\u003E\u003C/p\u003E\n\u003C/div\u003E",
       "date": "16/06/2024",
       "color": "#659fe0",
       "genre": "Educational",
       "tag": 1,
-      "tagline": "Projet étudiant en 3D réalisé en groupe en 4 jours",
+      "tagline": "Projet \u00E9tudiant en 3D r\u00E9alis\u00E9 en groupe en 4 jours",
       "images": "underwater/underwater_menu.png, underwater/underwater_1.png, underwater/underwater_2.png, underwater/underwater_3.png, underwater/underwater_4.png, underwater/underwater_5.png, underwater/underwater_6.png",
       "video": "https://www.youtube.com/embed/0kBgs5omFMc?si=7fB9HjyslRIQEIBu",
       "category": 1
     },
     {
       "id": 8,
-      "title": "Mécaniques mystérieuses",
-      "description": "<div lang=\"en\" style=\"font-size: 12px; color: #FF000000;\"><p><span>Pour r&#233;aliser un jeu sur le th&#232;me &quot;M&#233;caniques myst&#233;rieuses&quot;, j&#39;ai d&#233;cid&#233; de r&#233;aliser un labyrinthe sombre, dans lequel le joueur pourra devenir une source de lumi&#232;re qui diminuera au cours du temps, en ramassant des consommables au sol.</span></p>\n<p><span></span></p>\n<p><span>Pour s&#39;&#233;chapper de ce labyrinthe, il devra se rendre dans 3 salles cach&#233;s o&#249; seront pr&#233;sents des mini jeux aux m&#233;caniques diff&#233;rentes.</span></p>\n<p><span></span></p>\n<p><span>C&#39;est un projet &#233;tudiant en 3D r&#233;alis&#233; seul sur une journ&#233;e.</span></p>\n</div>",
+      "title": "M\u00E9caniques myst\u00E9rieuses",
+      "description": "\u003Cdiv lang=\u0022en\u0022 style=\u0022font-size: 12px; color: #FF000000;\u0022\u003E\u003Cp\u003E\u003Cspan\u003EPour r\u0026#233;aliser un jeu sur le th\u0026#232;me \u0026quot;M\u0026#233;caniques myst\u0026#233;rieuses\u0026quot;, j\u0026#39;ai d\u0026#233;cid\u0026#233; de r\u0026#233;aliser un labyrinthe sombre, dans lequel le joueur pourra devenir une source de lumi\u0026#232;re qui diminuera au cours du temps, en ramassant des consommables au sol.\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003EPour s\u0026#39;\u0026#233;chapper de ce labyrinthe, il devra se rendre dans 3 salles cach\u0026#233;s o\u0026#249; seront pr\u0026#233;sents des mini jeux aux m\u0026#233;caniques diff\u0026#233;rentes.\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003EC\u0026#39;est un projet \u0026#233;tudiant en 3D r\u0026#233;alis\u0026#233; seul sur une journ\u0026#233;e.\u003C/span\u003E\u003C/p\u003E\n\u003C/div\u003E",
       "date": "14/06/2024",
       "color": "#883714",
       "genre": "Adventure",
@@ -117,7 +146,7 @@
     {
       "id": 9,
       "title": "Les Gemmes du Kitsune",
-      "description": "<div lang=\"en\" style=\"font-size: 12px; color: #FF000000;\"><p><span>Les Gemmes du Kitsune est un projet &#233;tudiant r&#233;alis&#233; en solo, sur 1 journ&#233;e, avec un focus sur le d&#233;veloppement, sur le th&#232;me &quot;le folklore &#233;tranger&quot;. </span></p>\n<p><span></span></p>\n<p><span>Le joueur est dans le r&#244;le d&#39;un Kitsune, renard roux puissant poss&#233;dant des pouvoirs magiques et appartenant &#224; la culture japonaise.</span></p>\n<p><span>Il poss&#232;de le pouvoir de l&#39;illusion et de la m&#233;tamorphose.</span></p>\n<p><span>Le but est de collecter un maximum de gemmes pr&#233;sentes dans le village voisin et de les ramener &#224; la tani&#232;re, sans se faire rep&#233;rer par les villageois et attraper par les gardes.</span></p>\n<p><span></span></p>\n<p><span>C&#39;est un projet &#233;tudiant en 3D r&#233;alis&#233; seul sur une journ&#233;e.</span></p>\n</div>",
+      "description": "\u003Cdiv lang=\u0022en\u0022 style=\u0022font-size: 12px; color: #FF000000;\u0022\u003E\u003Cp\u003E\u003Cspan\u003ELes Gemmes du Kitsune est un projet \u0026#233;tudiant r\u0026#233;alis\u0026#233; en solo, sur 1 journ\u0026#233;e, avec un focus sur le d\u0026#233;veloppement, sur le th\u0026#232;me \u0026quot;le folklore \u0026#233;tranger\u0026quot;. \u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003ELe joueur est dans le r\u0026#244;le d\u0026#39;un Kitsune, renard roux puissant poss\u0026#233;dant des pouvoirs magiques et appartenant \u0026#224; la culture japonaise.\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003EIl poss\u0026#232;de le pouvoir de l\u0026#39;illusion et de la m\u0026#233;tamorphose.\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003ELe but est de collecter un maximum de gemmes pr\u0026#233;sentes dans le village voisin et de les ramener \u0026#224; la tani\u0026#232;re, sans se faire rep\u0026#233;rer par les villageois et attraper par les gardes.\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003EC\u0026#39;est un projet \u0026#233;tudiant en 3D r\u0026#233;alis\u0026#233; seul sur une journ\u0026#233;e.\u003C/span\u003E\u003C/p\u003E\n\u003C/div\u003E",
       "date": "10/06/2024",
       "color": "#FF8C00",
       "genre": "Adventure",
@@ -130,20 +159,20 @@
     {
       "id": 10,
       "title": "Student of Death",
-      "description": "<div lang=\"en\" style=\"font-size: 12px; color: #FF000000;\"><p><span>Student of Death est un projet 3D &#233;tudiant r&#233;alis&#233; en 1 journ&#233;e et seul sur le th&#232;me La petite mort.</span></p>\n<p><span></span></p>\n<p><span>Concept :</span></p>\n<p><span>Le joueur joue une jeune faucheuse qui souhaite obtenir son diplome.</span></p>\n<p><span>Pour cela, il doit recueillir les &#226;mes de ceux qui sont d&#233;c&#233;d&#233;s, leur permettant ainsi de passer dans l&#39;Au-del&#224; via un portail dans sa demeure.</span></p>\n<p><span></span></p>\n<p><span>Les diff&#233;rents assets 3D proviennent de Unity Asset Store.</span></p>\n</div>",
+      "description": "\u003Cdiv lang=\u0022en\u0022 style=\u0022font-size: 12px; color: #FF000000;\u0022\u003E\u003Cp\u003E\u003Cspan\u003EStudent of Death est un projet 3D \u0026#233;tudiant r\u0026#233;alis\u0026#233; en 1 journ\u0026#233;e et seul sur le th\u0026#232;me La petite mort.\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003EConcept :\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003ELe joueur joue une jeune faucheuse qui souhaite obtenir son diplome.\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003EPour cela, il doit recueillir les \u0026#226;mes de ceux qui sont d\u0026#233;c\u0026#233;d\u0026#233;s, leur permettant ainsi de passer dans l\u0026#39;Au-del\u0026#224; via un portail dans sa demeure.\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003ELes diff\u0026#233;rents assets 3D proviennent de Unity Asset Store.\u003C/span\u003E\u003C/p\u003E\n\u003C/div\u003E",
       "date": "28/03/2024",
       "color": "#3F3F3F",
       "genre": "Adventure",
       "tag": 1,
-      "tagline": "Projet étudiant type aventure en 3D créé seul en 1 journée",
+      "tagline": "Projet \u00E9tudiant type aventure en 3D cr\u00E9\u00E9 seul en 1 journ\u00E9e",
       "images": "student_of_death/student_of_death_screen_0.png, student_of_death/student_of_death_screen_1.png, student_of_death/student_of_death_screen_2.png, student_of_death/student_of_death_screen_3.png, student_of_death/student_of_death_screen_4.png",
       "video": "https://www.youtube.com/embed/C9u1zlzjFzQ?si=N8TPnBQZtNj7W4nT",
       "category": 2
     },
     {
       "id": 11,
-      "title": "Gros défouloir",
-      "description": "<div lang=\"en\" style=\"font-size: 12px; color: #FF000000;\"><p><span>Comme le titre l&#39;indique, la seule indication &#233;tait de r&#233;aliser un projet dans le th&#232;me de &quot;Gros d&#233;fouloir&quot;.</span></p>\n<p><span></span></p>\n<p><span>Le choix s&#39;est port&#233; sur une compr&#233;hension au sens litt&#233;ral du th&#232;me :</span></p>\n<p><span></span></p>\n<p><span>On incarne ici un m&#233;cha au centre d&#39;une ville qui se fait envahir par des monstres.</span></p>\n<p><span></span></p>\n<p><span>Le joueur peut donc attaquer/tirer sur les ennemis mais aussi d&#233;truire certains b&#226;timents pour donner un effet de destruction de masse, mais aussi pour rester sur des m&#233;caniques simples.</span></p>\n<p><span></span></p>\n<p><span>C&#39;est un projet &#233;tudiant en 3D r&#233;alis&#233; en groupe sur une journ&#233;e.</span></p>\n</div>",
+      "title": "Gros d\u00E9fouloir",
+      "description": "\u003Cdiv lang=\u0022en\u0022 style=\u0022font-size: 12px; color: #FF000000;\u0022\u003E\u003Cp\u003E\u003Cspan\u003EComme le titre l\u0026#39;indique, la seule indication \u0026#233;tait de r\u0026#233;aliser un projet dans le th\u0026#232;me de \u0026quot;Gros d\u0026#233;fouloir\u0026quot;.\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003ELe choix s\u0026#39;est port\u0026#233; sur une compr\u0026#233;hension au sens litt\u0026#233;ral du th\u0026#232;me :\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003EOn incarne ici un m\u0026#233;cha au centre d\u0026#39;une ville qui se fait envahir par des monstres.\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003ELe joueur peut donc attaquer/tirer sur les ennemis mais aussi d\u0026#233;truire certains b\u0026#226;timents pour donner un effet de destruction de masse, mais aussi pour rester sur des m\u0026#233;caniques simples.\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003EC\u0026#39;est un projet \u0026#233;tudiant en 3D r\u0026#233;alis\u0026#233; en groupe sur une journ\u0026#233;e.\u003C/span\u003E\u003C/p\u003E\n\u003C/div\u003E",
       "date": "16/06/2024",
       "color": "#7E7E7E",
       "genre": "Action",
@@ -156,7 +185,7 @@
     {
       "id": 12,
       "title": "Shadow Guardians",
-      "description": "<div lang=\"en\" style=\"font-size: 12px; color: #FF000000;\"><p><span>Shadow Guardians est un projet 3D &#233;tudiant r&#233;alis&#233; en 1 journ&#233;e et seul sur le th&#232;me Une rencontre inattendue.</span></p>\n<p><span></span></p>\n<p><span>A venir</span></p>\n</div>",
+      "description": "\u003Cdiv lang=\u0022en\u0022 style=\u0022font-size: 12px; color: #FF000000;\u0022\u003E\u003Cp\u003E\u003Cspan\u003EShadow Guardians est un projet 3D \u0026#233;tudiant r\u0026#233;alis\u0026#233; en 1 journ\u0026#233;e et seul sur le th\u0026#232;me Une rencontre inattendue.\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003E\u003C/span\u003E\u003C/p\u003E\n\u003Cp\u003E\u003Cspan\u003EA venir\u003C/span\u003E\u003C/p\u003E\n\u003C/div\u003E",
       "date": "28/03/2024",
       "color": "#2A2A61",
       "genre": "Action",
@@ -168,12 +197,29 @@
     }
   ],
   "categories": [
-    { "id": 1, "title": "Projets étudiants", "description": "" },
-    { "id": 2, "title": "Prototypes", "description": "" }
+    {
+      "id": 1,
+      "title": "Projets \u00E9tudiants",
+      "description": ""
+    },
+    {
+      "id": 2,
+      "title": "Prototypes",
+      "description": ""
+    }
   ],
   "tags": [
-    { "id": 1, "title": "Unity" },
-    { "id": 2, "title": "Unreal Engine" },
-    { "id": 3, "title": "C# | .NET" }
+    {
+      "id": 1,
+      "title": "Unity"
+    },
+    {
+      "id": 2,
+      "title": "Unreal Engine"
+    },
+    {
+      "id": 3,
+      "title": "C# | .NET"
+    }
   ]
 }
