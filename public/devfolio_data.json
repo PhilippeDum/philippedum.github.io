@@ -3,7 +3,7 @@
     {
       "id": 1,
       "Key": "website_description",
-      "Value": "Hello, je suis un Développeur Jeux vidéo junior de 23 ans travaillant essentiellement sur Unity 3D.\n\\nVoici mes bandes démos et projets réalisés durant mes études."
+      "Value": "Hello, je suis un Développeur Jeux vidéo junior de 24 ans travaillant essentiellement sur Unity 3D.\n\\nVoici mes bandes démos et projets réalisés durant mes études."
     },
     {
       "id": 2,
@@ -222,4 +222,5 @@
       "title": "C# | .NET"
     }
   ]
+
 }
