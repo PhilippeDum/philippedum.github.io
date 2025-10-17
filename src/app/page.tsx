@@ -38,10 +38,13 @@ export default async function Home() {
         const projects = data?.projects ?? [];
         const categories = data?.categories ?? [];
 
-        const contentDictionary = content.reduce((acc: { [key: string]: string }, item: { key: string, value: string }) => {
-            acc[item.key] = item.value;
-            return acc;
-        }, {});
+        const contentDictionary = Array.isArray(content)
+        ? content.reduce((acc: { [key: string]: string }, item: any) => {
+           const key = item.key ?? item.Key;
+           const value = item.value ?? item.Value;
+           if (key) acc[key] = value ?? "";
+           return acc;
+        }, {}) : {};
 
         return (
             <div className="container flex justify-center items-center flex-col bg-gradient-to-br from-blue-900 via-purple-900 to-black">
