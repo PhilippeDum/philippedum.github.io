@@ -17,6 +17,14 @@ export default function handler(req, res) {
     const items = data[section];
 
     if (req.method === "GET") {
+        const { id } = req.query;
+
+        if (id) {
+            const item = items.find(x => x.id === parseInt(id));
+            if (!item) return res.status(404).json({ error: "Item not found" });
+            res.status(200).json(item);
+        }
+
         res.status(200).json(items);
     }
     else if (req.method === "POST") {

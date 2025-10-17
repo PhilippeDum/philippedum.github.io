@@ -1,13 +1,13 @@
 {
   "content": [
-    { "key": "website_description", "value": "Hello, je suis un Développeur Jeux vidéo junior de 24 ans travaillant essentiellement sur Unity 3D.\n\\nVoici mes bandes démos et projets réalisés durant mes études." },
-    { "key": "linkedin_link", "value": "https://www.linkedin.com/in/philippe-dumoulin/" },
-    { "key": "github_link", "value": "https://github.com/PhilippeDum" },
-    { "key": "itchio_link", "value": "https://dumoulin-philippe.itch.io/" }
+    { "id": 1, "key": "website_description", "value": "Hello, je suis un Développeur Jeux vidéo junior de 24 ans travaillant essentiellement sur Unity 3D.\n\\nVoici mes bandes démos et projets réalisés durant mes études." },
+    { "id": 2, "key": "linkedin_link", "value": "https://www.linkedin.com/in/philippe-dumoulin/" },
+    { "id": 3, "key": "github_link", "value": "https://github.com/PhilippeDum" },
+    { "id": 4, "key": "itchio_link", "value": "https://dumoulin-philippe.itch.io/" }
   ],
   "demo_reels": [
-    { "title": "Demo Reel 2022", "link": "https://www.youtube.com/embed/rciUJPjo0gg?si=Gktad-gZ96Eo92EO" },
-    { "title": "Demo Reel 2023", "link": "https://www.youtube.com/embed/JLg6lC7rMzc?si=Iyijl1Ot4ENQ8IPq" }
+    { "id": 1, "title": "Demo Reel 2022", "link": "https://www.youtube.com/embed/rciUJPjo0gg?si=Gktad-gZ96Eo92EO" },
+    { "id": 2, "title": "Demo Reel 2023", "link": "https://www.youtube.com/embed/JLg6lC7rMzc?si=Iyijl1Ot4ENQ8IPq" }
   ],
   "projects": [
     {
@@ -168,12 +168,12 @@
     }
   ],
   "categories": [
-    { "title": "Projets étudiants", "description": "" },
-    { "title": "Prototypes", "description": "" }
+    { "id": 1, "title": "Projets étudiants", "description": "" },
+    { "id": 2, "title": "Prototypes", "description": "" }
   ],
   "tags": [
-    { "title": "Unity" },
-    { "title": "Unreal Engine" },
-    { "title": "C# | .NET" }
+    { "id": 1, "title": "Unity" },
+    { "id": 2, "title": "Unreal Engine" },
+    { "id": 3, "title": "C# | .NET" }
   ]
 }
