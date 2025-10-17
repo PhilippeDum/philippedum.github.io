@@ -25,6 +25,14 @@ async function fetchData() {
     return response.json();
 }
 
+type ContentItem = {
+    id?: number;
+    key?: string;
+    Key?: string;
+    value?: string;
+    Value?: string;
+};
+
 export default async function Home() {
     try{
         const data = await fetchData();
@@ -39,7 +47,7 @@ export default async function Home() {
         const categories = data?.categories ?? [];
 
         const contentDictionary = Array.isArray(content)
-        ? content.reduce((acc: { [key: string]: string }, item: any) => {
+        ? content.reduce((acc: { [key: string]: string }, item: ContentItem) => {
            const key = item.key ?? item.Key;
            const value = item.value ?? item.Value;
            if (key) acc[key] = value ?? "";
