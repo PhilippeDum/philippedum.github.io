@@ -3,7 +3,7 @@
     {
       "id": 1,
       "Key": "website_description",
-      "Value": "Hello, je suis un Développeur Jeux vidéo junior de 24 ans travaillant essentiellement sur Unity 3D.\n\\nVoici mes bandes démos et projets réalisés durant mes études."
+      "Value": "Hello, je suis un Développeur Jeux vidéo junior de 23 ans travaillant essentiellement sur Unity 3D.\n\\nVoici mes bandes démos et projets réalisés durant mes études."
     },
     {
       "id": 2,
@@ -194,13 +194,18 @@
   "categories": [
     {
       "id": 1,
-      "title": "Projets étudiants",
-      "description": ""
+      "Title": "Projets étudiants",
+      "Description": ""
     },
     {
       "id": 2,
-      "title": "Prototypes",
-      "description": ""
+      "Title": "Prototypes",
+      "Description": ""
+    },
+    {
+      "id": 3,
+      "Title": "Projets Personnels",
+      "Description": "Projets réalisés durant mon temps libre."
     }
   ],
   "tags": [
