@@ -2,23 +2,23 @@
   "content": [
     {
       "id": 1,
-      "Key": "website_description",
-      "Value": "Hello, je suis un Développeur Jeux vidéo junior de 24 ans travaillant essentiellement sur Unity 3D.\n\\nVoici mes bandes démos et projets réalisés durant mes études."
+      "key": "website_description",
+      "value": "Hello, je suis un Développeur Jeux vidéo junior de 24 ans travaillant essentiellement sur Unity 3D.\n\\nVoici mes bandes démos et projets réalisés durant mes études."
     },
     {
       "id": 2,
-      "Key": "linkedin_link",
-      "Value": "https://www.linkedin.com/in/philippe-dumoulin/"
+      "key": "linkedin_link",
+      "value": "https://www.linkedin.com/in/philippe-dumoulin/"
     },
     {
       "id": 3,
-      "Key": "github_link",
-      "Value": "https://github.com/PhilippeDum"
+      "key": "github_link",
+      "value": "https://github.com/PhilippeDum"
     },
     {
       "id": 4,
-      "Key": "itchio_link",
-      "Value": "https://dumoulin-philippe.itch.io/"
+      "key": "itchio_link",
+      "value": "https://dumoulin-philippe.itch.io/"
     }
   ],
   "demo_reels": [
@@ -194,36 +194,36 @@
   "categories": [
     {
       "id": 1,
-      "Title": "Projets étudiants",
-      "Description": "Projets réalisés durant mes études."
+      "title": "Projets étudiants",
+      "description": "Projets réalisés durant mes études."
     },
     {
       "id": 2,
-      "Title": "Prototypes",
-      "Description": "Projets non terminés."
+      "title": "Prototypes",
+      "description": "Projets non terminés."
     },
     {
       "id": 3,
-      "Title": "Projets Personnels",
-      "Description": "Projets réalisés durant mon temps libre."
+      "title": "Projets Personnels",
+      "description": "Projets réalisés durant mon temps libre."
     }
   ],
   "tags": [
     {
       "id": 1,
-      "Title": "Unity"
+      "title": "Unity"
     },
     {
       "id": 2,
-      "Title": "Unreal Engine"
+      "title": "Unreal Engine"
     },
     {
       "id": 3,
-      "Title": "C# | .NET"
+      "title": "C# | .NET"
     },
     {
       "id": 4,
-      "Title": "Web"
+      "title": "Web"
     }
   ]
 }
