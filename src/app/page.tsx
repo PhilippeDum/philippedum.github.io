@@ -16,7 +16,7 @@ function ShowError(error: string){
 }
 
 async function fetchData() {
-    const response = await fetch(`${API_URL}/devfolio_data.json`, { cache: "no-store" });
+    const response = await fetch(`${API_URL}/devfolio_data.json`, { next: { revalidate: 1 } });
 
     if (!response.ok){
         return null;
