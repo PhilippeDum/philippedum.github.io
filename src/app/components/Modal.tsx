@@ -5,6 +5,14 @@ import HtmlToText from "@/app/components/HtmlToText";
 import Image from "next/image";
 import {Project} from "@/app/components/Data";
 
+function GetImagesCount(project: Project){
+    if (!project.images)
+        return 0;
+
+    const imagesList = project.images.split(',').map(item => item.trim());
+    return imagesList.length;
+}
+
 export default function Modal({ project }: { project: Project }) {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -42,7 +50,7 @@ export default function Modal({ project }: { project: Project }) {
                         <div>
                             {project.video == "" ?
                                 <Image
-                                    className="object-cover rounded w-5/6 md:w-1/2 aspect-video mx-auto md:min-h-96 mt-4"
+                                    className="object-cover rounded w-5/6 h-auto md:w-1/2 aspect-video mx-auto md:min-h-96 mt-4"
                                     src={defaultImage}
                                     alt={defaultImage}
                                     width={500}
@@ -51,8 +59,7 @@ export default function Modal({ project }: { project: Project }) {
                                 :
                                 <iframe
                                     src={project.video}
-                                    className="w-5/6 md:w-1/2 aspect-video mx-auto md:min-h-96 mt-4"
-                                    frameBorder="0"
+                                    className="w-5/6 h-auto md:w-1/2 aspect-video mx-auto md:min-h-96 mt-4"
                                     aria-hidden="true"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                     referrerPolicy="strict-origin-when-cross-origin"
@@ -60,29 +67,56 @@ export default function Modal({ project }: { project: Project }) {
                                 />
                             }
 
-                            {project.images.length == 0 ? (
-                                <HtmlToText html={project.description} />
-                            ) : (
-                                <div className="grid md:grid-cols-[60%_40%] mt-6 gap-4">
-                                    <div>
-                                        <HtmlToText html={project.description} />
-                                    </div>
-                                    <div className="flex flex-col items-center p-8">
-                                        {projectImages.map((image: string, id: number) => (
-                                            <div key={id} className="mb-4">
-                                                <Image
-                                                    className="object-cover rounded"
-                                                    src={"/projects/" + image}
-                                                    alt={image}
-                                                    width={500}
-                                                    height={500}
-                                                />
-                                                <br/>
+                            <div className="p-8">
+                                {(() => {
+                                    const imageCount = GetImagesCount(project);
+
+                                    if (imageCount === 0) {
+                                        return <HtmlToText html={project.description} />;
+                                    }
+
+                                    if (imageCount == 1) {
+                                        return (
+                                            <div className="grid md:grid-cols-[60%_40%] mt-6 gap-4">
+                                                <div>
+                                                    <HtmlToText html={project.description} />
+                                                </div>
+                                                <div className="flex flex-col items-center">
+                                                    {projectImages.map((image: string, id: number) => (
+                                                        <Image
+                                                            key={id}
+                                                            className="object-cover rounded mb-4"
+                                                            src={"/projects/" + image}
+                                                            alt={image}
+                                                            width={500}
+                                                            height={500}
+                                                        />
+                                                    ))}
+                                                </div>
                                             </div>
-                                        ))}
-                                    </div>
-                                </div>
-                            )}
+                                        )
+                                    }
+
+                                    return (
+                                        <div>
+                                            <HtmlToText html={project.description} />
+                                            <br/>
+                                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mt-6">
+                                                {projectImages.map((image: string, id: number) => (
+                                                    <Image
+                                                        key={id}
+                                                        className="object-cover rounded mb-4"
+                                                        src={"/projects/" + image}
+                                                        alt={image}
+                                                        width={500}
+                                                        height={500}
+                                                    />
+                                                ))}
+                                            </div>
+                                        </div>
+                                    );
+                                })()}
+                            </div>
                         </div>
                     </div>
                 </div>
