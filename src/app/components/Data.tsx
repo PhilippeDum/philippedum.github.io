@@ -22,4 +22,5 @@ export type Project = {
 export type Category = {
     id: number;
     title: string;
+    description: string;
 }
