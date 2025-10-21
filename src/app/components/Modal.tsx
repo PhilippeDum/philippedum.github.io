@@ -24,7 +24,7 @@ export default function Modal({ project }: { project: Project }) {
 
             {isOpen && (
                 <div className="fixed inset-0 flex justify-center items-center bg-gray-600 bg-opacity-50 z-50">
-                    <div className="bg-white rounded-md shadow-lg w-11/12 h-5/6 text-black overflow-auto border-8" style={{ borderColor: project.color }}
+                    <div className="bg-white rounded-md shadow-lg w-11/12 h-[90%] text-black overflow-auto border-8" style={{ borderColor: project.color }}
                          onClick={(e) => e.stopPropagation()}>
 
                         <div className="sticky top-0 bg-white z-10 p-8 pb-0">
