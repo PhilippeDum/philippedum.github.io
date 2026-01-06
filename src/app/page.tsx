@@ -1,10 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import {Suspense} from "react";
+import { Suspense } from "react";
+import fs from "fs";
+import path from "path";
 import Projects from "@/app/@projects/page";
 import DemoReels from "@/app/@demo_reels/page";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL;
+const JSON_FILE_PATH = "public/devfolio_data.json";
 
 function ShowError(error: string){
     return (
@@ -15,16 +17,6 @@ function ShowError(error: string){
     );
 }
 
-async function fetchData() {
-    const response = await fetch(`${API_URL}/devfolio_data.json`, { next: { revalidate: 1 } });
-
-    if (!response.ok){
-        return null;
-    }
-
-    return response.json();
-}
-
 type ContentItem = {
     id?: number;
     key?: string;
@@ -33,14 +25,15 @@ type ContentItem = {
     Value?: string;
 };
 
-export default async function Home() {
+export default function Home() {
     try{
-        const data = await fetchData();
+        const filePath = path.join(process.cwd(), JSON_FILE_PATH);
+        const fileContents = fs.readFileSync(filePath, "utf8");
+        const data = JSON.parse(fileContents);
 
         if (!data) {
             return ShowError('Erreur lors de la récupération des données');
         }
-
         const content = data?.content ?? [];
         const demo_reels = data?.demo_reels ?? [];
         const projects = data?.projects ?? [];
