@@ -201,20 +201,17 @@
       "category": 2
     },
     {
+      "id": 13,
       "title": "Project 2026",
       "description": "This is a new project",
-      "formattedDate": "19/01/2026",
+      "date": "19/01/2026",
       "color": "#2769d2",
       "genre": "Test",
-      "tagId": 4,
-      "tagName": "",
-      "tagLine": "New project test",
+      "tag": 1,
+      "tagline": "Test project from Desktop app",
       "images": "",
-      "imagesDisplay": "",
       "video": "",
-      "categoryId": 3,
-      "categoryName": "",
-      "id": 13
+      "category": 3
     }
   ],
   "categories": [
