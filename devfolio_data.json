@@ -3,7 +3,7 @@
     {
       "id": 1,
       "key": "website_description",
-      "value": "Hello, je suis un dÃ©veloppeur Jeux vidÃ©o junior de 24 ans travaillant essentiellement sur Unity 3D.\n\\nVoici mes bandes dÃ©mos et projets rÃ©alisÃ©s durant mes Ã©tudes."
+      "value": "Hello, je suis un développeur Jeux vidéo junior de 24 ans travaillant essentiellement sur Unity 3D.\n\\nVoici mes bandes démos et projets réalisés durant mes études."
     },
     {
       "id": 2,
@@ -19,6 +19,11 @@
       "id": 4,
       "key": "itchio_link",
       "value": "https://dumoulin-philippe.itch.io/"
+    },
+    {
+      "key": "new_content",
+      "value": "https://new_content.com",
+      "id": 5
     }
   ],
   "demo_reels": [
@@ -31,6 +36,11 @@
       "id": 2,
       "title": "Demo Reel 2023",
       "link": "https://www.youtube.com/embed/JLg6lC7rMzc?si=Iyijl1Ot4ENQ8IPq"
+    },
+    {
+      "title": "New Demo Reel 2026",
+      "link": "https://my_demo_reel_2026.com",
+      "id": 3
     }
   ],
   "projects": [
@@ -42,7 +52,7 @@
       "color": "#eb8c34",
       "genre": "Simulation",
       "tag": 1,
-      "tagline": "Projet Ã©tudiant type simulation de ferme en 3D crÃ©Ã© en groupe sur 1 an",
+      "tagline": "Projet étudiant type simulation de ferme en 3D créé en groupe sur 1 an",
       "images": "knitcut/knitcut_menu.jpg",
       "video": "https://www.youtube.com/embed/LDG_QTGV0J0?si=aQfa2pRTm45SpeDo",
       "category": 1
@@ -55,7 +65,7 @@
       "color": "#826451",
       "genre": "Simulation",
       "tag": 1,
-      "tagline": "Rondouillard Park est un projet Ã©tudiant en 3D rÃ©alisÃ© en groupe sur 1 semaine",
+      "tagline": "Rondouillard Park est un projet étudiant en 3D réalisé en groupe sur 1 semaine",
       "images": "rondouillard_park/rondouillard_park_menu.png",
       "video": "https://www.youtube.com/embed/vDrnCG-GYfo?si=dcp_vM8MCTF8NPYz",
       "category": 1
@@ -68,7 +78,7 @@
       "color": "#94C1E3",
       "genre": "Adventure",
       "tag": 1,
-      "tagline": "Projet Ã©tudiant type plateformer en 3D crÃ©Ã© en groupe en 1 journÃ©e",
+      "tagline": "Projet étudiant type plateformer en 3D créé en groupe en 1 journée",
       "images": "spore-like/spore-like_screen_0.png, spore-like/spore-like_screen_1.png, spore-like/spore-like_screen_2.png, spore-like/spore-like_screen_3.png",
       "video": "https://www.youtube.com/embed/GoJV6-osN1w?si=0De7PG27Q_fOT8aK",
       "category": 1
@@ -88,7 +98,7 @@
     },
     {
       "id": 5,
-      "title": "ÃŽles volantes",
+      "title": "Îles volantes",
       "description": "<div lang=\"en\" style=\"font-size: 12px; color: #FF000000;\"><p><span>Concernant le th&#232;me &quot;Ile volante&quot;, j&#39;ai choisi de partir sur un platformer dans lequel l&#39;ile volante part d&#39;un point A et doit atteindre un point B.</span></p>\n<p><span></span></p>\n<p><span>Pour cela, il ne faut pas que le poids total de l&#39;&#238;le d&#233;passe une certaine limite qui sera mise &#224; l&#39;&#233;preuve avec diff&#233;rents d&#233;bris qui tomberont du ciel.</span></p>\n<p><span></span></p>\n<p><span>Le joueur devra alors d&#233;barrasser les d&#233;bris de l&#39;&#238;le afin de stabiliser le poids, tout cela dans un temps imparti.</span></p>\n<p><span></span></p>\n<p><span>C&#39;est un projet &#233;tudiant en 3D r&#233;alis&#233; seul sur une journ&#233;e.</span></p>\n</div>",
       "date": "14/06/2024",
       "color": "#8ADECC",
@@ -107,7 +117,7 @@
       "color": "#4EBF75",
       "genre": "Platformer",
       "tag": 1,
-      "tagline": "Projet Ã©tudiant type plateformer en 3D crÃ©Ã© seul en 1 journÃ©e",
+      "tagline": "Projet étudiant type plateformer en 3D créé seul en 1 journée",
       "images": "cloud_runner/cloud_runner_menu.png, cloud_runner/cloud_runner_screen_1.png, cloud_runner/cloud_runner_screen_2.png, cloud_runner/cloud_runner_screen_3.png, cloud_runner/cloud_runner_screen_4.png",
       "video": "https://www.youtube.com/embed/oT2yoxQvR88?si=-cRAkXX8CT4-faG2",
       "category": 2
@@ -120,14 +130,14 @@
       "color": "#659fe0",
       "genre": "Educational",
       "tag": 1,
-      "tagline": "Projet Ã©tudiant en 3D rÃ©alisÃ© en groupe en 4 jours",
+      "tagline": "Projet étudiant en 3D réalisé en groupe en 4 jours",
       "images": "underwater/underwater_menu.png, underwater/underwater_1.png, underwater/underwater_2.png, underwater/underwater_3.png, underwater/underwater_4.png, underwater/underwater_5.png, underwater/underwater_6.png",
       "video": "https://www.youtube.com/embed/0kBgs5omFMc?si=7fB9HjyslRIQEIBu",
       "category": 1
     },
     {
       "id": 8,
-      "title": "MÃ©caniques mystÃ©rieuses",
+      "title": "Mécaniques mystérieuses",
       "description": "<div lang=\"en\" style=\"font-size: 12px; color: #FF000000;\"><p><span>Pour r&#233;aliser un jeu sur le th&#232;me &quot;M&#233;caniques myst&#233;rieuses&quot;, j&#39;ai d&#233;cid&#233; de r&#233;aliser un labyrinthe sombre, dans lequel le joueur pourra devenir une source de lumi&#232;re qui diminuera au cours du temps, en ramassant des consommables au sol.</span></p>\n<p><span></span></p>\n<p><span>Pour s&#39;&#233;chapper de ce labyrinthe, il devra se rendre dans 3 salles cach&#233;s o&#249; seront pr&#233;sents des mini jeux aux m&#233;caniques diff&#233;rentes.</span></p>\n<p><span></span></p>\n<p><span>C&#39;est un projet &#233;tudiant en 3D r&#233;alis&#233; seul sur une journ&#233;e.</span></p>\n</div>",
       "date": "14/06/2024",
       "color": "#883714",
@@ -159,14 +169,14 @@
       "color": "#3F3F3F",
       "genre": "Adventure",
       "tag": 1,
-      "tagline": "Projet Ã©tudiant type aventure en 3D crÃ©Ã© seul en 1 journÃ©e",
+      "tagline": "Projet étudiant type aventure en 3D créé seul en 1 journée",
       "images": "student_of_death/student_of_death_screen_0.png, student_of_death/student_of_death_screen_1.png, student_of_death/student_of_death_screen_2.png, student_of_death/student_of_death_screen_3.png, student_of_death/student_of_death_screen_4.png",
       "video": "https://www.youtube.com/embed/C9u1zlzjFzQ?si=N8TPnBQZtNj7W4nT",
       "category": 2
     },
     {
       "id": 11,
-      "title": "Gros dÃ©fouloir",
+      "title": "Gros défouloir",
       "description": "<div lang=\"en\" style=\"font-size: 12px; color: #FF000000;\"><p><span>Comme le titre l&#39;indique, la seule indication &#233;tait de r&#233;aliser un projet dans le th&#232;me de &quot;Gros d&#233;fouloir&quot;.</span></p>\n<p><span></span></p>\n<p><span>Le choix s&#39;est port&#233; sur une compr&#233;hension au sens litt&#233;ral du th&#232;me :</span></p>\n<p><span></span></p>\n<p><span>On incarne ici un m&#233;cha au centre d&#39;une ville qui se fait envahir par des monstres.</span></p>\n<p><span></span></p>\n<p><span>Le joueur peut donc attaquer/tirer sur les ennemis mais aussi d&#233;truire certains b&#226;timents pour donner un effet de destruction de masse, mais aussi pour rester sur des m&#233;caniques simples.</span></p>\n<p><span></span></p>\n<p><span>C&#39;est un projet &#233;tudiant en 3D r&#233;alis&#233; en groupe sur une journ&#233;e.</span></p>\n</div>",
       "date": "16/06/2024",
       "color": "#7E7E7E",
@@ -189,23 +199,39 @@
       "images": "",
       "video": "",
       "category": 2
+    },
+    {
+      "title": "Project 2026",
+      "description": "This is a new project",
+      "formattedDate": "19/01/2026",
+      "color": "#2769d2",
+      "genre": "Test",
+      "tagId": 4,
+      "tagName": "",
+      "tagLine": "New project test",
+      "images": "",
+      "imagesDisplay": "",
+      "video": "",
+      "categoryId": 3,
+      "categoryName": "",
+      "id": 13
     }
   ],
   "categories": [
     {
       "id": 1,
-      "title": "Projets Ã©tudiants",
-      "description": "Projets rÃ©alisÃ©s durant mes Ã©tudes."
+      "title": "Projets étudiants",
+      "description": "Projets réalisés durant mes études."
     },
     {
       "id": 2,
       "title": "Prototypes",
-      "description": "Projets non terminÃ©s."
+      "description": "Projets non terminés."
     },
     {
       "id": 3,
       "title": "Projets Personnels",
-      "description": "Projets rÃ©alisÃ©s durant mon temps libre."
+      "description": "Projets réalisés durant mon temps libre."
     }
   ],
   "tags": [
