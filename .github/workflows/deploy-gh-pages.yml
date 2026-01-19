@@ -1,9 +1,7 @@
 ﻿name: Deploy Next.js to GitHub Pages
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
@@ -33,4 +31,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./out
           publish_branch: gh-pages
-          force_orphan: true
