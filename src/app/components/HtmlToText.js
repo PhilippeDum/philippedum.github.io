@@ -1,4 +1,6 @@
-﻿// components/HtmlToText.js
+﻿'use client';
+
+// components/HtmlToText.js
 import React from 'react';
 
 const HtmlToText = ({ html }) => {

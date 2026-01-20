@@ -1,21 +1,7 @@
-import Image from "next/image";
-import Link from "next/link";
 import { Suspense } from "react";
-import fs from "fs";
-import path from "path";
+import { getData } from "@/app/lib/data"
 import Projects from "@/app/@projects/page";
 import DemoReels from "@/app/@demo_reels/page";
-
-const JSON_FILE_PATH = "public/devfolio_data.json";
-
-function ShowError(error: string){
-    return (
-        <div className="h-screen container flex justify-center items-center flex-col bg-gradient-to-br from-blue-900 via-purple-900 to-black">
-            <h1 className="sm:text-2xl">Erreur détectée !</h1>
-            <h1 className="sm:text-xl">{error}</h1>
-        </div>
-    );
-}
 
 type ContentItem = {
     id?: number;
@@ -27,12 +13,15 @@ type ContentItem = {
 
 export default function Home() {
     try{
-        const filePath = path.join(process.cwd(), JSON_FILE_PATH);
-        const fileContents = fs.readFileSync(filePath, "utf8");
-        const data = JSON.parse(fileContents);
+        const data = getData();
 
         if (!data) {
-            return ShowError('Erreur lors de la récupération des données');
+            return (
+                <div className="h-screen container flex justify-center items-center flex-col bg-gradient-to-br from-blue-900 via-purple-900 to-black">
+                    <h1 className="sm:text-2xl">Erreur détectée !</h1>
+                    <h1 className="sm:text-xl">Erreur lors de la récupération des données</h1>
+                </div>
+            )
         }
         const content = data?.content ?? [];
         const demo_reels = data?.demo_reels ?? [];
@@ -48,55 +37,128 @@ export default function Home() {
         }, {}) : {};
 
         return (
-            <div className="container flex justify-center items-center flex-col bg-gradient-to-br from-blue-900 via-purple-900 to-black">
+            <div>
+                <a href="#" className="scroll-top">↑</a>
 
-                <div className="whitespace-normal break-words">
-                    <Image src="/game_developer_banner.png" alt="developer_banner" width={3000} height={300}/>
-                    <main className="m-5">
-
-                        <br/><br/><br/>
-
-                        <h1 className="flex justify-center text-center whitespace-pre-wrap sm:text-2xl">
-                            {contentDictionary["website_description"]
-                                ? contentDictionary["website_description"].replace('\\n', '').trim()
-                                : ""}
-                        </h1>
-
-                        <br/><br/><br/>
-
-                        <Suspense fallback={<p>Chargement des demo reels...</p>}>
-                            <DemoReels demo_reels={demo_reels} />
-                        </Suspense>
-
-                        <br/><br/>
-
-                        <Suspense fallback={<p>Chargement des projets...</p>}>
-                            <Projects projects={projects} categories={categories} />
-                        </Suspense>
-
-                    </main>
-
-                    <br/><br/><br/><br/>
-
-                    <div className="h-0.5 bg-gray-600" />
-
-                    <footer className="justify-items-center m-5">
-
-                        <h1 className="sm:text-2xl">Contact :</h1>
-                        <br/>
-                        <div className="flex flex-col sm:flex-row gap-5 underline text-blue-400">
-                            <Link className="hover:text-blue-500" href={contentDictionary["github_link"] || "#"}>Github</Link>
-                            <Link className="hover:text-blue-500" href={contentDictionary["linkedin_link"] || "#"}>LinkedIn</Link>
-                            <Link className="hover:text-blue-500" href={contentDictionary["itchio_link"] || "#"}>Itch.io</Link>
+                <header className="flow-effect">
+                    <nav id="navbar">
+                        <h2>Devfolio</h2>
+                        <div className="navbar_buttons">
+                            <a href="">Accueil</a>
+                            <a href="#demoreels">Demo-Reels</a>
+                            <a href="#projects">Projects</a>
                         </div>
+                    </nav>
+                    <div className="header-content container">
+                        <div>
+                            <h1 className="title">Dumoulin Philippe</h1>
+                            <hr/>
+                            <h2 className="subtitle">Développeur Unity</h2>
+                        </div>
+                    </div>
 
-                    </footer>
-                </div>
+                    <div>
+                        <svg className="waves" xmlns="http://www.w3.org/2000/svg"
+                             viewBox="0 24 150 28" preserveAspectRatio="none" shapeRendering="auto">
+                            <defs>
+                                <path id="gentle-wave"
+                                      d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"/>
+                            </defs>
+                            <g className="parallax">
+                                <use href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7"/>
+                                <use href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)"/>
+                                <use href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)"/>
+                                <use href="#gentle-wave" x="48" y="7" fill="#fff"/>
+                            </g>
+                        </svg>
+                    </div>
+
+                    <div className="header-footer container">
+                        <a href={contentDictionary["linkedin_link"] || "#"}>LinkedIn</a>
+                        <a href={contentDictionary["github_link"] || "#"}>Github</a>
+                        <a href={contentDictionary["itchio_link"] || "#"}>Itch.io</a>
+                    </div>
+                </header>
+
+                <main className="content">
+
+                    <br/><br/><br/>
+                    
+                    {contentDictionary["website_description"]
+                        ? <div className="description">
+                            <h2>{contentDictionary["website_description"].replace(/\n/g, "<br/>").trim()}</h2>
+                        </div> : ''}
+
+                    <br/><br/><br/>
+
+                    <Suspense fallback={<p>Chargement des demo reels...</p>}>
+                        <DemoReels demo_reels={demo_reels} />
+                    </Suspense>
+
+                    {/*<section id="featured-demoreels">
+                        <h2>Test Feature + others</h2>
+                        <div className="featured-grid">
+                            <div key={demo_reels[0].id} className="video_wrapper">
+                                <iframe
+                                    key={demo_reels[0].id} src={demo_reels[0].link} title={demo_reels[0].title}
+                                    className="card_video"
+                                    aria-hidden="true"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"
+                                    referrerPolicy="strict-origin-when-cross-origin"
+                                    allowFullScreen
+                                />
+                            </div>
+                            <div className="grid">
+                                <div key={demo_reels[1].id} className="video_wrapper">
+                                    <iframe
+                                        key={demo_reels[1].id} src={demo_reels[1].link} title={demo_reels[1].title}
+                                        className="card_video"
+                                        aria-hidden="true"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"
+                                        referrerPolicy="strict-origin-when-cross-origin"
+                                        allowFullScreen
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </section>*/}
+
+                    <br/><br/><br/>
+
+                    <Suspense fallback={<p>Chargement des projets...</p>}>
+                        <Projects projects={projects} categories={categories} />
+                    </Suspense>
+
+                    {/*<section id="featured-projects">
+                        <h2>Test Feature + others</h2>
+                        <div className="featured-grid">
+                            <div className="card">
+                                <div className="card_head">
+                                    <img className="card_image"
+                                         src="https://gamedev.tv/_next/image?url=https%3A%2F%2Fgamedev-files.b-cdn.net%2Fcourses%2Fvf9isglbwbh0.jpg&w=1080&q=75"
+                                         alt="cover"/>
+                                </div>
+                                <div className="card_body">
+                                    <h1>Project N</h1>
+                                    <p>Nouveau project.</p>
+                                    <div className="inline">
+                                        <h4>20/01/2026</h4>
+                                        <button className="default_button">Details</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h1>Featured Project details</h1>
+                                <p>Details...</p>
+                            </div>
+                        </div>
+                    </section>*/}
+                </main>
             </div>
         )
     } catch (error) {
         console.log(error)
-        if (error instanceof Error){
+        if (error instanceof Error) {
             return <h1 className="text-red-500">{error.message}</h1>;
         } else {
             return <h1 className="text-red-500">An unknown error occurred</h1>;

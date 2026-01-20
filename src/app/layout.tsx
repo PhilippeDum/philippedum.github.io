@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Quicksand } from "next/font/google";
-import "./globals.css";
+import "./style.css";
+import "./background.css";
 
 const quicksandSans = Quicksand({
     variable: "--font-quicksand-sans",
