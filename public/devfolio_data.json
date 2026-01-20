@@ -3,7 +3,7 @@
     {
       "id": 1,
       "key": "website_description",
-      "value": "Hello, je suis un développeur Jeux vidéo junior de 24 ans travaillant essentiellement sur Unity 3D. Voici mes bandes démos et projets réalisés durant mes études."
+      "value": "Hello, je suis un développeur Jeux vidéo junior de 24 ans travaillant essentiellement sur Unity 3D. \nVoici mes bandes démos et projets réalisés durant mes études."
     },
     {
       "id": 2,
@@ -19,11 +19,6 @@
       "id": 4,
       "key": "itchio_link",
       "value": "https://dumoulin-philippe.itch.io/"
-    },
-    {
-      "key": "new_content",
-      "value": "https://new_content.com",
-      "id": 5
     }
   ],
   "demo_reels": [
@@ -36,11 +31,6 @@
       "id": 2,
       "title": "Demo Reel 2023",
       "link": "https://www.youtube.com/embed/JLg6lC7rMzc?si=Iyijl1Ot4ENQ8IPq"
-    },
-    {
-      "title": "New Demo Reel 2026",
-      "link": "https://my_demo_reel_2026.com",
-      "id": 3
     }
   ],
   "projects": [
