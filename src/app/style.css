@@ -34,7 +34,7 @@ header {
 }
 
 .flow-effect {
-    background: linear-gradient(rgb(23, 11, 75), rgb(45, 46, 143));
+    background: linear-gradient(rgb(25, 6, 54), rgb(56, 25, 114));
 }
 
 .flow-effect::before {
@@ -62,7 +62,7 @@ header {
     text-align:center;
     height:15vh;
     gap: 40px;
-    background-color: white;
+    background-color: rgb(223, 220, 235);
 }
 
 .header-footer > a {
@@ -87,10 +87,10 @@ header {
     padding: 5vh 10vw;
     background: linear-gradient(
         to bottom,
-        rgba(255,255,255, 1) 0%,
-        rgba(73, 63, 141, 0.8) 35%,
-        rgb(58, 52, 115) 70%,
-        rgb(33, 18, 98) 100%
+        rgba(223, 220, 235, 1) 0%,
+        rgba(78, 56, 138, 0.8) 35%,
+        rgb(66, 52, 115) 70%,
+        rgb(67, 25, 114) 100%
     );
 }
 
@@ -228,7 +228,7 @@ p {
 }
 
 .default_button {
-    background-color: #363260;
+    background-color: #393260;
     color: white;
     border: transparent solid 1px;
     border-radius: 8px;
@@ -240,18 +240,18 @@ p {
 }
 
 .project-view {
-    background: linear-gradient(rgb(23, 11, 75), rgb(45, 46, 143));
+    background: linear-gradient(rgb(9, 6, 54), rgb(56, 49, 95));
     padding: 5vh 10vw;
 }
 
 .project-display {
     display: grid;
     gap: 20px;
-    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-columns: minmax(0, 1fr) 400px;
 }
 
 .project-infos {
-    background: rgba(116, 106, 168, 0.5);
+    background: rgba(125, 106, 168, 0.5);
     width: 100%;
     border-radius: 12px;
     padding: 20px;

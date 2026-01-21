@@ -66,9 +66,9 @@ export default function Home() {
                             </defs>
                             <g className="parallax">
                                 <use href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7"/>
-                                <use href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)"/>
-                                <use href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)"/>
-                                <use href="#gentle-wave" x="48" y="7" fill="#fff"/>
+                                <use href="#gentle-wave" x="48" y="3" fill="rgba(239, 240, 255, 0.5)"/>
+                                <use href="#gentle-wave" x="48" y="5" fill="rgba(240, 235, 255, 0.3)"/>
+                                <use href="#gentle-wave" x="48" y="7" fill="rgba(223, 220, 235, 1)"/>
                             </g>
                         </svg>
                     </div>

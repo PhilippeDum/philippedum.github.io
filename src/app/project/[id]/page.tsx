@@ -45,8 +45,8 @@ export default async function ProjectPage({ params }: Props) {
                 <Link href="/#projects" className="scroll-top">Back</Link>
 
                 <div className="project-display">
-                <Slideshow images={projectImages} video={project.video} />
-                <div className="project-infos" style={{ border: `5px solid ${project.color}` }}>
+                    <Slideshow images={projectImages} video={project.video} />
+                    <div className="project-infos" style={{ border: `5px solid ${project.color}` }}>
                     <h1>{project.title}</h1>
                     <br/><br/>
                     <br/>
