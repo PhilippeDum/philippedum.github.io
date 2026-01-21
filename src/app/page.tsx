@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import { getData } from "@/app/lib/data"
 import Projects from "@/app/@projects/page";
 import DemoReels from "@/app/@demo_reels/page";
+import Navbar from "./components/Navbar";
 
 type ContentItem = {
     id?: number;
@@ -41,18 +42,7 @@ export default function Home() {
                 <a href="#" className="scroll-top">↑</a>
 
                 <header className="flow-effect">
-                    <nav id="navbar">
-                        <input type="checkbox" id="check" />
-                        <label htmlFor="check" className="checkbtn">
-                            <i className="fas fa-bars"></i>
-                        </label>
-                        <h2>Devfolio</h2>
-                        <ul className="navbar_buttons">
-                            <li><a href="">Accueil</a></li>
-                            <li><a href="#demoreels">Demo-Reels</a></li>
-                            <li><a href="#projects">Projects</a></li>
-                        </ul>
-                    </nav>
+                    <Navbar />
                     <div className="header-content container">
                         <div>
                             <h1 className="title">Dumoulin Philippe</h1>
