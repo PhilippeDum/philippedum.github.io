@@ -42,12 +42,16 @@ export default function Home() {
 
                 <header className="flow-effect">
                     <nav id="navbar">
+                        <input type="checkbox" id="check" />
+                        <label htmlFor="check" className="checkbtn">
+                            <i className="fas fa-bars"></i>
+                        </label>
                         <h2>Devfolio</h2>
-                        <div className="navbar_buttons">
-                            <a href="">Accueil</a>
-                            <a href="#demoreels">Demo-Reels</a>
-                            <a href="#projects">Projects</a>
-                        </div>
+                        <ul className="navbar_buttons">
+                            <li><a href="">Accueil</a></li>
+                            <li><a href="#demoreels">Demo-Reels</a></li>
+                            <li><a href="#projects">Projects</a></li>
+                        </ul>
                     </nav>
                     <div className="header-content container">
                         <div>
@@ -86,9 +90,11 @@ export default function Home() {
 
                     {contentDictionary["website_description"] && (
                         <div className="content-description">
+                            <br/>
                             <h2 style={{ whiteSpace: "pre-line" }}>
                                 {contentDictionary["website_description"].replace(/\\n/g, "\n")}
                             </h2>
+                            <br/>
                         </div>
                     )}
 
