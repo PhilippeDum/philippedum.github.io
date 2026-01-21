@@ -2,14 +2,19 @@
     font-family: "Quicksand", system-ui, sans-serif;
 }
 
-html {
-    scroll-behavior: smooth;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
-body {
-    background: linear-gradient(60deg, rgb(33, 18, 98) 0%, rgb(55, 58, 180) 100%);
+html, body {
+    
+    scroll-behavior: smooth;
     color: white;
     margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
 .title {
@@ -29,7 +34,7 @@ header {
 }
 
 .flow-effect {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.1));
+    background: linear-gradient(rgb(23, 11, 75), rgb(45, 46, 143));
 }
 
 .flow-effect::before {
@@ -79,7 +84,7 @@ header {
 }
 
 .content {
-    padding: 10vw;
+    padding: 5vh 10vw;
     background: linear-gradient(
         to bottom,
         rgba(255,255,255, 1) 0%,
@@ -91,9 +96,19 @@ header {
 
 .inline {
     display: flex;
-    justify-content: space-between;
+    gap: 10px;
     align-items: center;
-    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.inline h3 {
+    flex-shrink: 0;
+}
+
+.inline h4 {
+    text-align: right;
+    word-break: break-word;
+    flex: 1;
 }
 
 h1, p {
@@ -145,7 +160,7 @@ p {
     color: #5b569b;
 }
 
-.description {
+.content-description {
     background: rgba(10, 9, 21, 0.4);
     border-radius: 50px;
     text-align: center;
@@ -153,19 +168,8 @@ p {
     padding: 100px 0;
 }
 
-.description > h2 {
+.content-description > h2 {
     padding: 0 100px;
-}
-
-.featured-grid {
-    display: grid;
-    gap: 20px;
-    grid-template-columns: 1fr 500px;
-}
-
-.grid {
-    display: grid;
-    gap: 20px;
 }
 
 .demoreels-grid {
@@ -186,7 +190,8 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    border: none;
+    border: 1px solid transparent;
+    border-radius: 20px;
 }
 
 .projects-grid {
@@ -234,16 +239,36 @@ p {
     background-color: #483e83;
 }
 
-/*** Slideshow ***/
-
-.project {
-    padding: 40px;
+.project-view {
+    background: linear-gradient(rgb(23, 11, 75), rgb(45, 46, 143));
+    padding: 5vh 10vw;
 }
+
+.project-display {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.project-infos {
+    background: rgba(116, 106, 168, 0.5);
+    width: 100%;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.project-description {
+    padding: 20px;
+}
+
+/*** Slideshow ***/
 
 .slideshow {
     position: relative;
-    width: 1000px;
+    width: 100%;
+    max-width: 100%;
     margin: auto;
+    gap: 20px;
 }
 
 .slide-radio{
@@ -252,7 +277,8 @@ p {
 
 .slides {
     position: relative;
-    height: 600px;
+    aspect-ratio: 16 / 9;
+    height: auto;
     overflow: hidden;
 }
 
@@ -267,25 +293,98 @@ p {
 .slide img, .slide iframe {
     width: 100%;
     height: 100%;
+    max-width: 100%;
     object-fit: cover;
+    
+    border: 1px solid transparent;
+    border-radius: 20px;
+}
+
+.thumbnails-wrapper {
+   position: relative;
+   display: flex;
+   align-items: center;
+   gap: 8px;
+   width: 100%;
 }
 
 .thumbnails {
     display: flex;
-    justify-content: center;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    flex: 1;
     gap: 10px;
-    margin-top: 10px;
+}
+
+.thumb, .thumb-arrow {
+    height: 100px;
 }
 
 .thumb {
+    flex: 0 0 auto;
+    width: 200px;
     cursor: pointer;
     opacity: 0.6;
-    border: 2px solid transparent;
-    transition: opacity 0.3s, border 0.3s;
+    align-self: center;
 }
 
 .thumb img {
-    width: 200px;
-    height: 100px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+
+    border: 1px solid transparent;
+    border-radius: 20px;
+}
+
+.thumb-arrow {
+    background: transparent;
+    color: #d2d2d2;
+    border: none;
+    width: auto;
+    cursor: pointer;
+    font-size: 50px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.thumb-arrow:hover {
+    color: #5b569b;
+}
+
+@media (max-width: 1024px) {
+    .project-display {
+        gap: 40px;
+        grid-template-columns: 1fr;
+    }
+
+    .thumb {
+        width: 120px;
+        height: 70px;
+    }
+
+    .thumb-arrow {
+        display: none;
+    }
+
+    .thumbnails {
+        overflow-x: auto;
+    }
+}
+
+@media (max-width: 750px) {
+    .thumb {
+        width: 80px;
+        height: auto;
+    }
+
+    .inline {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .inline h4 {
+        text-align: left;
+    }
 }

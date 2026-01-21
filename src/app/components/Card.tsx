@@ -8,7 +8,7 @@ export default function Card({ project }: { project: Project }) {
     const defaultImage = "/projects/a_venir.png";
 
     return (
-        <div className="card">
+        <div className="card" style={{ border: `5px solid ${project.color}` }}>
             <div className="card_head">
                 <img className="card_image"
                      src={firstImage ? cardImage : defaultImage}

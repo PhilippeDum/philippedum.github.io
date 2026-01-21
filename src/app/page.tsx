@@ -83,11 +83,14 @@ export default function Home() {
                 <main className="content">
 
                     <br/><br/><br/>
-                    
-                    {contentDictionary["website_description"]
-                        ? <div className="description">
-                            <h2>{contentDictionary["website_description"].replace(/\n/g, "<br/>").trim()}</h2>
-                        </div> : ''}
+
+                    {contentDictionary["website_description"] && (
+                        <div className="content-description">
+                            <h2 style={{ whiteSpace: "pre-line" }}>
+                                {contentDictionary["website_description"].replace(/\\n/g, "\n")}
+                            </h2>
+                        </div>
+                    )}
 
                     <br/><br/><br/>
 
@@ -95,64 +98,11 @@ export default function Home() {
                         <DemoReels demo_reels={demo_reels} />
                     </Suspense>
 
-                    {/*<section id="featured-demoreels">
-                        <h2>Test Feature + others</h2>
-                        <div className="featured-grid">
-                            <div key={demo_reels[0].id} className="video_wrapper">
-                                <iframe
-                                    key={demo_reels[0].id} src={demo_reels[0].link} title={demo_reels[0].title}
-                                    className="card_video"
-                                    aria-hidden="true"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"
-                                    referrerPolicy="strict-origin-when-cross-origin"
-                                    allowFullScreen
-                                />
-                            </div>
-                            <div className="grid">
-                                <div key={demo_reels[1].id} className="video_wrapper">
-                                    <iframe
-                                        key={demo_reels[1].id} src={demo_reels[1].link} title={demo_reels[1].title}
-                                        className="card_video"
-                                        aria-hidden="true"
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"
-                                        referrerPolicy="strict-origin-when-cross-origin"
-                                        allowFullScreen
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                    </section>*/}
-
                     <br/><br/><br/>
 
                     <Suspense fallback={<p>Chargement des projets...</p>}>
                         <Projects projects={projects} categories={categories} />
                     </Suspense>
-
-                    {/*<section id="featured-projects">
-                        <h2>Test Feature + others</h2>
-                        <div className="featured-grid">
-                            <div className="card">
-                                <div className="card_head">
-                                    <img className="card_image"
-                                         src="https://gamedev.tv/_next/image?url=https%3A%2F%2Fgamedev-files.b-cdn.net%2Fcourses%2Fvf9isglbwbh0.jpg&w=1080&q=75"
-                                         alt="cover"/>
-                                </div>
-                                <div className="card_body">
-                                    <h1>Project N</h1>
-                                    <p>Nouveau project.</p>
-                                    <div className="inline">
-                                        <h4>20/01/2026</h4>
-                                        <button className="default_button">Details</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <h1>Featured Project details</h1>
-                                <p>Details...</p>
-                            </div>
-                        </div>
-                    </section>*/}
                 </main>
             </div>
         )

@@ -1,4 +1,8 @@
-﻿interface Props {
+﻿"use client";
+
+import { useRef } from "react";
+
+interface Props {
     images: string[];
     video?: string | null;
 }
@@ -6,7 +10,6 @@
 function getYouTubeId(embedUrl: string): string | null {
     try {
         const url = new URL(embedUrl);
-        // L'ID est le dernier segment du pathname
         const parts = url.pathname.split("/");
         return parts[parts.length - 1] || null;
     } catch {
@@ -39,11 +42,23 @@ export default function Slideshow({ images, video }: Props) {
             }`
         )
         .join("\n");
+
+    const thumbsRef = useRef<HTMLDivElement>(null);
+
+    const scrollThumbs = (direction: number) => {
+        if (!thumbsRef.current) return;
+
+        const scrollAmount = 200;
+        thumbsRef.current.scrollBy({
+            left: direction * scrollAmount,
+            behavior: "smooth"
+        })
+    }
     
     return (
         <div className="slideshow">
             {elements.map((_, i) => (
-                    <input key={i} type="radio" name="slider" id={`slide${i + 1}`} className="slide-radio" defaultChecked={i == 0} />
+                <input key={i} type="radio" name="slider" id={`slide${i + 1}`} className="slide-radio" defaultChecked={i == 0} />
             ))}
         
             <div className="slides">
@@ -52,18 +67,35 @@ export default function Slideshow({ images, video }: Props) {
                         {element.type === "image" ? (
                             <img src={`/projects/${element.src}`} alt={`Slide ${i + 1}`} />
                         ) : (
-                            <iframe src={element.src} allowFullScreen />
+                            <iframe src={element.src}
+                                aria-hidden="true"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"
+                                referrerPolicy="strict-origin-when-cross-origin"
+                                allowFullScreen 
+                            />
                         )}
                     </div>
                 ))}
             </div>
-        
-            <div className="thumbnails">
-                {elements.map((element, i) => (
-                    <label key={i} className="thumb" htmlFor={`slide${i + 1}`}>
-                        <img src={element.type === "image" ? "/projects/"+element.src : element.thumb || defaultImage} alt={`Thumbnail ${i + 1}`} />
-                    </label>
-                ))}
+
+            <br/>
+            <div className="thumbnails-wrapper">
+                <button className="thumb-arrow left" onClick={() => scrollThumbs(-1)}>
+                    ◀
+                </button>
+
+                <div className="thumbnails" ref={thumbsRef}>
+                    {elements.map((element, i) => (
+                        <label key={i} className="thumb" htmlFor={`slide${i + 1}`}>
+                            <img src={element.type === "image" ? "/projects/"+element.src : element.thumb || defaultImage} 
+                            alt={`Thumbnail ${i + 1}`} />
+                        </label>
+                    ))}
+                </div>
+
+                <button className="thumb-arrow right" onClick={() => scrollThumbs(1)}>
+                    ▶
+                </button>
             </div>
             <style>{dynamicCSS}</style>
         </div>

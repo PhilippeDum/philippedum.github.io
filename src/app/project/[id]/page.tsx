@@ -1,5 +1,5 @@
 ﻿import Link from "next/link";
-import { Project } from "@/app/components/Data";
+import { Project, Tag, Category } from "@/app/components/Data";
 import { getData } from "@/app/lib/data";
 import HtmlToText from "@/app/components/HtmlToText";
 import Slideshow from "@/app/components/Slideshow";
@@ -14,13 +14,6 @@ export function generateStaticParams() {
         id: project.id.toString(),
     }));
 }
-/*function GetImagesCount(project: Project){
-    if (!project.images)
-        return 0;
-
-    const imagesList = project.images.split(',').map(item => item.trim());
-    return imagesList.length;
-}*/
 
 export default async function ProjectPage({ params }: Props) {    
     try{
@@ -38,6 +31,8 @@ export default async function ProjectPage({ params }: Props) {
         }
         
         const project: Project = data.projects.find(x => x.id.toString() === id);
+        const tag: Tag = data.tags.find(x => x.id === project.tag);
+        const category: Category = data.categories.find(x => x.id === project.category);
 
         if (!project) {
             return <div>Project not found</div>
@@ -46,90 +41,39 @@ export default async function ProjectPage({ params }: Props) {
         const projectImages = project.images.split(', ');
         
         return (
-            <div className="project">
+            <div className="project-view">
+                <a href="/#projects" className="scroll-top">Back</a>
 
+                <div className="project-display">
                 <Slideshow images={projectImages} video={project.video} />
-
-                <br/><br/><br/><br/>
-                
-                <h1>{project.title}</h1>
-                <HtmlToText html={project.description} />
-
-                <Link href="/">← Retour aux projets</Link>
-                
-                <br/><br/>
-
-                {/*<div>
-                    {project.video == "" ?
-                        <Image
-                            className="object-cover rounded w-5/6 h-auto md:w-1/2 aspect-video mx-auto md:min-h-96 mt-4"
-                            src={defaultImage}
-                            alt={defaultImage}
-                            width={500}
-                            height={500}
-                        />
-                        :
-                        <iframe
-                            src={project.video}
-                            className="w-5/6 h-auto md:w-1/2 aspect-video mx-auto md:min-h-96 mt-4"
-                            aria-hidden="true"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerPolicy="strict-origin-when-cross-origin"
-                            allowFullScreen
-                        />
-                    }
-
-                    <div className="p-8">
-                        {(() => {
-                            const imageCount = GetImagesCount(project);
-
-                            if (imageCount === 0) {
-                                return <HtmlToText html={project.description} />;
-                            }
-
-                            if (imageCount == 1) {
-                                return (
-                                    <div className="grid md:grid-cols-[60%_40%] mt-6 gap-4">
-                                        <div>
-                                            <HtmlToText html={project.description} />
-                                        </div>
-                                        <div className="flex flex-col items-center">
-                                            {projectImages.map((image: string, id: number) => (
-                                                <Image
-                                                    key={id}
-                                                    className="object-cover rounded mb-4"
-                                                    src={"/projects/" + image}
-                                                    alt={image}
-                                                    width={500}
-                                                    height={500}
-                                                />
-                                            ))}
-                                        </div>
-                                    </div>
-                                )
-                            }
-
-                            return (
-                                <div>
-                                    <HtmlToText html={project.description} />
-                                    <br/>
-                                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mt-6">
-                                        {projectImages.map((image: string, id: number) => (
-                                            <Image
-                                                key={id}
-                                                className="object-cover rounded mb-4"
-                                                src={"/projects/" + image}
-                                                alt={image}
-                                                width={500}
-                                                height={500}
-                                            />
-                                        ))}
-                                    </div>
-                                </div>
-                            );
-                        })()}
+                <div className="project-infos" style={{ border: `5px solid ${project.color}` }}>
+                    <h1>{project.title}</h1>
+                    <br/><br/>
+                    <br/>
+                    <div className="inline">
+                        <h3>Tag</h3>
+                        <h4>{tag.title}</h4>
                     </div>
-                </div>*/}
+                    <div className="inline">
+                        <h3>Category</h3>
+                        <h4>{category.title}</h4>
+                    </div>
+                    <div className="inline">
+                        <h3>Color</h3>
+                        <h4>{project.color}</h4>
+                    </div>
+                    <br/><br/>
+                    <h3>{project.date}</h3>
+                </div>
+            </div>
+
+            <br/><br/><br/><br/>
+
+            <div className="project-description">
+                <h1 style={{ textDecoration: `underline ${project.color}` }}>Description</h1>
+                <br/>
+                <HtmlToText html={project.description} />
+            </div>
             </div>
         );
     } catch (error) {
