@@ -1,6 +1,7 @@
 ﻿"use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 
 interface Props {
     images: string[];
@@ -28,8 +29,9 @@ export default function Slideshow({ images, video }: Props) {
     }
 
     const elements = video
-        ? [{ type: "iframe", src: video, thumb: videoThumbnail }, ...validImages.map(src => ({ type: "image", src }))]
-        : validImages.map(src => ({ type: "image", src }));
+        ? [{ type: "iframe", src: video, thumb: videoThumbnail }, 
+            ...validImages.map(src => ({ type: "image", src, thumb: '' }))]
+        : validImages.map(src => ({ type: "image", src, thumb: '' }));
 
     const dynamicCSS = elements
         .map(
@@ -65,7 +67,7 @@ export default function Slideshow({ images, video }: Props) {
                 {elements.map((element, i) => (
                     <div key={i} className="slide">
                         {element.type === "image" ? (
-                            <img src={`/projects/${element.src}`} alt={`Slide ${i + 1}`} />
+                            <Image src={`/projects/${element.src}`} alt={`Slide ${i + 1}`}  width={100} height={100} />
                         ) : (
                             <iframe src={element.src}
                                 aria-hidden="true"
@@ -87,8 +89,8 @@ export default function Slideshow({ images, video }: Props) {
                 <div className="thumbnails" ref={thumbsRef}>
                     {elements.map((element, i) => (
                         <label key={i} className="thumb" htmlFor={`slide${i + 1}`}>
-                            <img src={element.type === "image" ? "/projects/"+element.src : element.thumb || defaultImage} 
-                            alt={`Thumbnail ${i + 1}`} />
+                            <Image src={element.type === "image" ? `/projects/${element.src}` : element.thumb ?? defaultImage}
+                            alt={`Thumbnail ${i + 1}`}  width={100} height={100} />
                         </label>
                     ))}
                 </div>

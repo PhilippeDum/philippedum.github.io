@@ -24,3 +24,8 @@ export type Category = {
     title: string;
     description: string;
 }
+
+export type Tag = {
+    id: number;
+    title: string;
+}

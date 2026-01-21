@@ -1,6 +1,6 @@
-﻿import Link from "next/link";
-import { Project, Tag, Category } from "@/app/components/Data";
+﻿import { Project, Tag, Category } from "@/app/components/Data";
 import { getData } from "@/app/lib/data";
+import Link from "next/link";
 import HtmlToText from "@/app/components/HtmlToText";
 import Slideshow from "@/app/components/Slideshow";
 
@@ -10,7 +10,7 @@ type Props = {
 
 export function generateStaticParams() {
     const data = getData();
-    return data.projects.map(project => ({
+    return data.projects.map((project: Project) => ({
         id: project.id.toString(),
     }));
 }
@@ -30,9 +30,9 @@ export default async function ProjectPage({ params }: Props) {
             )
         }
         
-        const project: Project = data.projects.find(x => x.id.toString() === id);
-        const tag: Tag = data.tags.find(x => x.id === project.tag);
-        const category: Category = data.categories.find(x => x.id === project.category);
+        const project: Project = data.projects.find((x:Project) => x.id.toString() === id);
+        const tag: Tag = data.tags.find((x:Tag) => x.id === project.tag);
+        const category: Category = data.categories.find((x:Category) => x.id === project.category);
 
         if (!project) {
             return <div>Project not found</div>
@@ -42,7 +42,7 @@ export default async function ProjectPage({ params }: Props) {
         
         return (
             <div className="project-view">
-                <a href="/#projects" className="scroll-top">Back</a>
+                <Link href="/#projects" className="scroll-top">Back</Link>
 
                 <div className="project-display">
                 <Slideshow images={projectImages} video={project.video} />

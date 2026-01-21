@@ -1,4 +1,5 @@
 ﻿import {Project} from "@/app/components/Data";
+import Image from "next/image";
 
 export default function Card({ project }: { project: Project }) {
 
@@ -10,9 +11,9 @@ export default function Card({ project }: { project: Project }) {
     return (
         <div className="card" style={{ border: `5px solid ${project.color}` }}>
             <div className="card_head">
-                <img className="card_image"
+                <Image className="card_image"
                      src={firstImage ? cardImage : defaultImage}
-                     alt={cardImage}
+                     alt={cardImage} width={100} height={100}
                 />
             </div>
             <div className="card_body">
