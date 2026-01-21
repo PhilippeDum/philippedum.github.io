@@ -24,7 +24,7 @@ export default function RootLayout({
 }: LayoutProps) {
 
     return (
-    <html lang="en">
+    <html lang="fr">
       <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
       </head>
