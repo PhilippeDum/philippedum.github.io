@@ -192,14 +192,14 @@
     },
     {
       "id": 13,
-      "title": "Project 2026",
-      "description": "This is a new project",
-      "date": "19/01/2026",
-      "color": "#2769d2",
-      "genre": "Test",
-      "tag": 1,
-      "tagline": "Test project from Desktop app",
-      "images": "",
+      "title": "Devfolio Desktop App",
+      "description": "Il s'agit d'une application CRUD simple, développée avec Tauri et Svelte, qui permet de gérer l'ensemble du contenu du site web devfolio.\n\nJe peux ajouter, modifier et supprimer du contenu comme les réseaux sociaux, les bandes démo ou bien les projets.\n\nCette application est locale et est connectée à Github.\nLe fonctionnement est le suivant : \n- Récupération du JSON du devfolio sur Git en local via un pull\n- Modification des informations\n- Nouveau JSON local envoyé sur le Git via un commit & push",
+      "date": "14/01/2026",
+      "color": "#252538",
+      "genre": "CRUD App locale",
+      "tag": 4,
+      "tagline": "CRUD App locale pour le site web devfolio",
+      "images": "devfolio_desktop/devfolio_desktop_1.png, devfolio_desktop/devfolio_desktop_2.png, devfolio_desktop/devfolio_desktop_3.png, devfolio_desktop/devfolio_desktop_4.png",
       "video": "",
       "category": 3
     }
