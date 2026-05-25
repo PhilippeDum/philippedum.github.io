@@ -82,7 +82,7 @@
       "genre": "Riddle",
       "tag": 1,
       "tagline": "",
-      "images": "voyages_ames/voyages_ames_menu.png",
+      "images": "le_voyage_des_ames/voyages_ames_menu.png",
       "video": "https://www.youtube.com/embed/6SCEADcYjIY?si=Bu2ZMNdteVgKmusI",
       "category": 2
     },
@@ -95,7 +95,7 @@
       "genre": "Platformer",
       "tag": 1,
       "tagline": "",
-      "images": "ile_volante/ile_volante_menu.png",
+      "images": "iles_volantes/ile_volante_menu.png",
       "video": "https://www.youtube.com/embed/5H7WpWCNU64?si=JOzhDc06cUJe-u8T",
       "category": 2
     },
@@ -121,7 +121,7 @@
       "genre": "Educational",
       "tag": 1,
       "tagline": "Projet étudiant en 3D réalisé en groupe en 4 jours",
-      "images": "underwater/underwater_menu.png, underwater/underwater_1.png, underwater/underwater_2.png, underwater/underwater_3.png, underwater/underwater_4.png, underwater/underwater_5.png, underwater/underwater_6.png",
+      "images": "underwater_vr/underwater_menu.png, underwater_vr/underwater_1.png, underwater_vr/underwater_2.png, underwater_vr/underwater_3.png, underwater_vr/underwater_4.png, underwater_vr/underwater_5.png, underwater_vr/underwater_6.png",
       "video": "https://www.youtube.com/embed/0kBgs5omFMc?si=7fB9HjyslRIQEIBu",
       "category": 1
     },
@@ -147,7 +147,7 @@
       "genre": "Adventure",
       "tag": 1,
       "tagline": "Folklore japonais - Infiltration",
-      "images": "gemmes_kitsune/gemmes_kitsune_menu.png",
+      "images": "les_gemmes_du_kitsune/gemmes_kitsune_menu.png",
       "video": "https://www.youtube.com/embed/wqy7lBA4a8M?si=SjaQ0tLkhj3XfMq-",
       "category": 2
     },
@@ -199,7 +199,7 @@
       "genre": "CRUD App locale",
       "tag": 4,
       "tagline": "CRUD App locale pour le site web devfolio",
-      "images": "devfolio_desktop/devfolio_desktop_1.png, devfolio_desktop/devfolio_desktop_2.png, devfolio_desktop/devfolio_desktop_3.png, devfolio_desktop/devfolio_desktop_4.png",
+      "images": "devfolio_desktop_app/devfolio_desktop_1.png, devfolio_desktop_app/devfolio_desktop_2.png, devfolio_desktop_app/devfolio_desktop_3.png, devfolio_desktop_app/devfolio_desktop_4.png",
       "video": "",
       "category": 3
     }
