@@ -23,6 +23,7 @@ export type Category = {
     id: number;
     title: string;
     description: string;
+    order: number;
 }
 
 export type Tag = {

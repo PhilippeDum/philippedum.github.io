@@ -4,12 +4,11 @@ import {Category, Project} from "@/app/components/Data";
 function SetupProjects(projects: Project[], categories: Category[]) {
     const projectsPerCategory = [];
 
-    let categoryId = 1;
     for (const category of categories) {
         const categoryProject = [];
 
         for (const project of projects) {
-            if (categoryId == project.category) {
+            if (category.id == project.category) {
                 categoryProject.push(project);
             }
         }
@@ -18,8 +17,6 @@ function SetupProjects(projects: Project[], categories: Category[]) {
             key: category,
             value: categoryProject
         });
-
-        categoryId++;
     }
 
     return projectsPerCategory;
@@ -33,6 +30,8 @@ interface ProjectsSetupProps {
 export default function Projects({ projects, categories }: ProjectsSetupProps){
     const projectsList = projects ?? [];
     const categoriesList = categories ?? [];
+
+    categoriesList.sort((a, b) => a.order - b.order);
 
     const projectsSetup = SetupProjects(projectsList, categoriesList) ?? [];
 
