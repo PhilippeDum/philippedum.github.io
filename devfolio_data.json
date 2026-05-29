@@ -208,17 +208,20 @@
     {
       "id": 1,
       "title": "Projets étudiants",
-      "description": "Projets réalisés durant mes études."
+      "description": "Projets réalisés durant mes études.",
+      "order": 2
     },
     {
       "id": 2,
       "title": "Prototypes",
-      "description": "Projets non terminés."
+      "description": "Projets non terminés.",
+      "order": 3
     },
     {
       "id": 3,
       "title": "Projets Personnels",
-      "description": "Projets réalisés durant mon temps libre."
+      "description": "Projets réalisés durant mon temps libre.",
+      "order": 1
     }
   ],
   "tags": [
