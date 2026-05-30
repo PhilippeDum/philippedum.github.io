@@ -202,6 +202,20 @@
       "images": "devfolio_desktop_app/devfolio_desktop_1.png, devfolio_desktop_app/devfolio_desktop_2.png, devfolio_desktop_app/devfolio_desktop_3.png, devfolio_desktop_app/devfolio_desktop_4.png",
       "video": "",
       "category": 3
+    },
+    {
+      "id": 14,
+      "title": "Mirrors of the hearth",
+      "description": "Mirrors of the hearth is a cozy 3D puzzle experience made for the Cozy Winter Jam 2026.\n\nThe goal of the game for the theme Cozy Winter - Reflections is for the player to bring light to the cottage.\n\nTo do so, the player can rotate mirrors (45°) placed across the map to reflect the light & have to use the frozen lake as a mirror to reveal the secret path.\n\nEnjoy a peaceful lo-fi winter ambiance while traversing the forest.\n\nAnd, in bonus, you can also choose who to play between 2 characters.\n\n\nFeel free to leave a comment!\n\n\n\nControls :\n\nMovement: WASD (there's a bug detected where the controls are locked on WASD)\nInteract: F \n\n\nCredits :\n\nModels: Quaternius, KayKit, Low Poly Winter Log Cabin (Unity Asset Store)\nCharacters: VRoid Studio & bikonos (Booth.pm)\nMusic & Sounds: Pixabay / Freesound.org",
+      "date": "22/02/2026",
+      "color": "#1e3178",
+      "genre": "Puzzle",
+      "tag": 1,
+      "tagline": "A cozy winter puzzle game about reflection and light.",
+      "images": "mirrors_of_the_hearth/mirrors_of_the_hearth_1.png,mirrors_of_the_hearth/mirrors_of_the_hearth_2.png,mirrors_of_the_hearth/mirrors_of_the_hearth_3.png,mirrors_of_the_hearth/mirrors_of_the_hearth_4.png",
+      "video": "",
+      "category": 3,
+      "_pendingDeletions": []
     }
   ],
   "categories": [
