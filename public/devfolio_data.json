@@ -212,9 +212,10 @@
       "genre": "Puzzle",
       "tag": 1,
       "tagline": "A cozy winter puzzle game about reflection and light.",
-      "images": "mirrors_of_the_hearth/mirrors_of_the_hearth_1.png,mirrors_of_the_hearth/mirrors_of_the_hearth_2.png,mirrors_of_the_hearth/mirrors_of_the_hearth_3.png,mirrors_of_the_hearth/mirrors_of_the_hearth_4.png",
+      "images": "mirrors_of_the_hearth/mirrors_of_the_hearth_1.png, mirrors_of_the_hearth/mirrors_of_the_hearth_2.png, mirrors_of_the_hearth/mirrors_of_the_hearth_3.png, mirrors_of_the_hearth/mirrors_of_the_hearth_4.png",
       "video": "",
       "category": 3,
+      "_pendingUploads": [],
       "_pendingDeletions": []
     }
   ],
